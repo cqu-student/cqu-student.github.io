@@ -4,9 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="长尾问题, half-high and half-long">
-    <meta name="description" content="长尾问题​		在传统的分类任务中，训练数据往往都受到了人工的均衡，即不同类别样本数量没有明显差距。均衡的数据库将极大程度上简化了算法鲁棒性的要求，也一定程度上保障了模型的可靠性，但随着样本类别的增加维持各个类别之间的均衡将带来更大的成本。
-">
+    <meta name="keywords" content="无监督自适应学习相关, half-high and half-long">
+    <meta name="description" content="无监督自适应学习《迁移学习》: 领域自适应(Domain Adaptation)的理论分析 - 知乎 (zhihu.com)
+https://blog.csdn.net/SHU15121856/article/details/1068745">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>长尾问题 | half-high and half-long</title>
+    <title>无监督自适应学习相关 | half-high and half-long</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -314,12 +314,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">长尾问题</h1>
+                    <h1 class="description center-align post-title">无监督自适应学习相关</h1>
                 </div>
             </div>
         </div>
@@ -343,8 +343,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AE%BA%E6%96%87%E9%A2%84%E8%AF%BB/">
-                                <span class="chip bg-color">论文预读</span>
+                            <a href="/tags/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB-%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-%E8%A7%86%E9%A2%91%E5%8A%A8%E4%BD%9C%E5%AE%9A%E4%BD%8D/">
+                                <span class="chip bg-color">论文理论预读 目标检测 视频动作定位</span>
                             </a>
                         
                     </div>
@@ -368,28 +368,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-12-30
+                    2022-12-15
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-12-05
+                    2022-12-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    643
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    2 Min
+                    4 Min
                 </div>
                 
 
@@ -409,21 +409,23 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="长尾问题"><a href="#长尾问题" class="headerlink" title="长尾问题"></a>长尾问题</h1><p>​		在传统的分类任务中，训练数据往往都受到了人工的均衡，即不同类别样本数量没有明显差距。均衡的数据库将极大程度上简化了算法鲁棒性的要求，也一定程度上保障了模型的可靠性，但随着样本类别的增加维持各个类别之间的均衡将带来更大的成本。</p>
-<p>​		尤其是对于珍惜动物、与医疗上的罕见病例，部分类别的样本个数极为稀少，获取均衡的数据库几乎不可能。</p>
-<p>​		<img src="https://img-blog.csdnimg.cn/1229308b7cad4c33bc6c9a5070006e0b.png#pic_center" alt="img"></p>
-<p>​		</p>
-<p>​		目前解决长尾问题的解决方案有两种：重采样与重加权。</p>
-<p>​		重采样：<img src="C:\Users\de'l'l\AppData\Roaming\Typora\typora-user-images\image-20221130201514898.png" alt="image-20221130201514898"></p>
-<p>​		其中C是类别数量，i为样本总数。pj为从j类样本中取样的概率，q为指数。</p>
-<p>​		重加权：</p>
-<p>​		重加权反应在loss值上，由于loss的计算灵活性，重加权的计算更加简单。在此仅列举通用公式：</p>
-<p>​		<img src="C:\Users\de'l'l\AppData\Roaming\Typora\typora-user-images\image-20221130201924508.png" alt="image-20221130201924508"></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42437114/article/details/120439298">(73条消息) Long-tailed Recognition (长尾问题)_连理o的博客-CSDN博客_长尾问题</a></p>
-<p>​		分类损失函数（Lcls）</p>
-<h2 id="数据增广："><a href="#数据增广：" class="headerlink" title="数据增广："></a>数据增广：</h2><p>​		图像数据准备对<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C&amp;spm=1001.2101.3001.7020">神经网络</a>与卷积神经网络模型训练有重要影响，<strong>当样本空间不够或者样本数量不足的时候会严重影响训练或者导致训练出来的模型泛化程度不够，识别率与准确率不高</strong>！本文将会带你学会如何对已有的图像数据进行<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA&amp;spm=1001.2101.3001.7020">数据增强</a>，获取样本的多样性与数据的多样性从而为训练模型打下良好基础。在不改变图像类别的情况下，增加数据量，能提高模型的泛化能力。<br>​    	不同的视角，不同的大小，物体的形变问题，物体的遮挡问题，光照条件，背景复杂的问题，每一类中有多种形态的问题。<br>​		而数据增广的思路也就是解决这个问题。数据增广如何增广就要从实际的问题出发，比如医学的图片基本上拍摄的时候视角是固定的，所以就不需要不同视角的增广。木纹检测中视角是不固定的，就需要不同的视角，不同的大小的增广，还需要应不同的光照条件对数据进行增广。</p>
-<p>​		如<strong>GistNet: a Geometric Structure Transfer Network for Long-Tailed Recognition</strong>文中使用了特殊的归一化思路，以将尾样本数据的方差逼近head样本。</p>
-<p>​		</p>
+                <h1 id="无监督自适应学习"><a href="#无监督自适应学习" class="headerlink" title="无监督自适应学习"></a>无监督自适应学习</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/50710267">《迁移学习》: 领域自适应(Domain Adaptation)的理论分析 - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/SHU15121856/article/details/106874558">https://blog.csdn.net/SHU15121856/article/details/106874558</a></p>
+<p><strong>首先Domain Adaptation基本思想是既然源域和目标域数据分布不一样，那么就把数据都映射到一个特征空间中，在特征空间中找一个度量准则，使得源域和目标域数据的特征分布尽量接近，于是基于源域数据特征训练的判别器，就可以用到目标域数据上。</strong></p>
+<p>Domain Adaptation是一种源任务和目标任务一样，但是源域和目标域的数据分布不一样，并且源域有大量的标记好的样本，目标域则没有（或者只有非常少的）有标记的样本的迁移学习方法。这样就是怎么把源域上从大量的有标记样本中学习的知识迁移到目标域上，来解决相同的问题，而目标域上能利用的大多只有没有标记的样本。</p>
+<p>这里要解释一下“数据分布不一样”是什么意思，就比如下图中(a)组是不同来源的自行车和笔记本电脑的照片，有从购物网站下载的，也有数码相机拍的生活照，也有网络上获取的照片等，它们虽然都表达自行车和笔记本电脑，但是数据分布是不同的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20200620212935604.png"></p>
+<p>比如用(b)组的门牌号数据集SVHN去训练模型，去提取SVNH和MNIST的特征，然后将其可视化到一个平面内，是下图左边的样子，蓝色点是源域（SVNH）的样本，红色的点是目标域（MNIST）的样本，也就是说直接在源域上训练得到的分类器的分类边界无法很好的区分目标域的样本。而领域自适应这种迁移学习方法想达到的效果就是下图右边这样，让源域和目标域中的样本能对齐，这样模型就能在目标域上很好的使用了。<br><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221216223738.png"></p>
+<h2 id="基于对抗的自适应："><a href="#基于对抗的自适应：" class="headerlink" title="基于对抗的自适应："></a>基于对抗的自适应：</h2><p>如RevGrad（ICML,2015） 的基本思路就是用GAN去让生成器生成特征，然后让判别器判别它是源域的还是目标域的特征，如果判别不出来就说明在这个特征空间里源域和目标域是一致的。</p>
+<p>下图中绿色部分是一个特征提取器，源域和目标域数据都扔进去，它就是用来生成（或者叫提取）特征的，然后紫色部分是对源域数据的特征做分类的分类器，红色部分是对源域数据和目标域数据的特征做判别的判别器，这个判别器要不断增强（能很好的判别是源域的还是目标域的特征），同时生成器也要增强，让生成出来的特征能混淆判别器的判别，这样最后生成（提取）出的特征就是源域和目标域空间里一致的了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20200620233326328.png"></p>
+<p>这个可以用GAN的最小化-最大化的思想去训练，也可以用论文中的梯度反转层（Gradient Reversal Layer） 的方法，就是在上图中白色空心箭头的位置加了个梯度反转层，在前向传播的过程中就是正常的网络，即最小化Loss让红色部分的判别器性能更好，再反向传播的过程中把梯度取负，即优化绿色部分的特征提取器，来尽量让红色部分的判别器分不清特征是源域的还是目标域的。这个方法就是一个训练技巧。</p>
+<h2 id="课程学习"><a href="#课程学习" class="headerlink" title="课程学习"></a>课程学习</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/362351969">一篇综述带你全面了解课程学习(Curriculum Learning) - 知乎 (zhihu.com)</a></p>
+<p>它是一种训练策略，<strong>模仿人类的学习过程，主张让模型先从容易的样本开始学习，并逐渐进阶到复杂的样本和知识</strong>。CL策略在计算机视觉和自然语言处理等多种场景下，在提高各种模型的泛化能力和收敛率方面表现出了强大的能力。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221216225442.png"></p>
+<p>课程式学习是在 T个训练步骤上的训练标准序列 C=⟨Q1,…,Qt,…,QT⟩， 每个准则 Qt 是目标训练分布 P(z) 的权重。该准则包括数据，任务、模型容量、学习目标等。</p>
+<h1 id="Transferable-curriculum-for-weakly-supervised-DA"><a href="#Transferable-curriculum-for-weakly-supervised-DA" class="headerlink" title="Transferable curriculum for weakly supervised DA"></a>Transferable curriculum for weakly supervised DA</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/57719459">Transferable curriculum for weakly supervised DA - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_43673376/article/details/108742246">(78条消息) 域适应系列2：Transferable Curriculum for Weakly-Supervised Domain Adaptation（AAAI 2019）_weixin_43673376的博客-CSDN博客_transferable curriculum for weakly-supervised doma</a></p>
 
                 
             </div>
@@ -450,7 +452,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/12/30/2022-12-30-chang-wei-wen-ti/">http://example.com/2022/12/30/2022-12-30-chang-wei-wen-ti/</a>
+                    <a href="http://example.com/2022/12/15/wu-jian-du-zi-gua-ying-xue-xi-xiang-guan/">http://example.com/2022/12/15/wu-jian-du-zi-gua-ying-xue-xi-xiang-guan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -488,8 +490,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AE%BA%E6%96%87%E9%A2%84%E8%AF%BB/">
-                                    <span class="chip bg-color">论文预读</span>
+                                <a href="/tags/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB-%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-%E8%A7%86%E9%A2%91%E5%8A%A8%E4%BD%9C%E5%AE%9A%E4%BD%8D/">
+                                    <span class="chip bg-color">论文理论预读 目标检测 视频动作定位</span>
                                 </a>
                             
                         </div>
@@ -535,10 +537,9 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
                 <a href="/2022/12/30/2022-12-30-chang-wei-wen-ti/">
                     <div class="card-image">
@@ -556,9 +557,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-30
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-30
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -571,7 +572,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -590,13 +590,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/12/15/wu-jian-du-zi-gua-ying-xue-xi-xiang-guan/">
+                <a href="/2022/12/15/dui-kang-xue-xi-xiang-guan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="无监督自适应学习相关">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="对抗学习相关">
                         
-                        <span class="card-title">无监督自适应学习相关</span>
+                        <span class="card-title">对抗学习相关</span>
                     </div>
                 </a>
                 <div class="card-content article-content">

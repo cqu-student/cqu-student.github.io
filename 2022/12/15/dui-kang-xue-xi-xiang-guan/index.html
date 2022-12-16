@@ -376,21 +376,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-12-15
+                    2022-12-16
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    878
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    2 Min
+                    6 Min
                 </div>
                 
 
@@ -421,7 +421,17 @@
 <p>深度神经网络对于对抗样本的判错率非常高，而人几乎无法辨别原样本与对抗样本的差别，这就意味着原本深度神经网络的功能已经失效了，不具有媲美人类的智能了。</p>
 <p>由此可见，对抗攻击的危害很大，尤其是对于无人驾驶、医疗诊断、金融分析这些安全至关重要的领域。对抗样本无疑制约着机器学习技术的进一步应用，因此，提升神经网络的对抗鲁棒性（抵御对抗样本的能力）变得十分重要。</p>
 <p>于是，机器学习中的对抗样本引起了研究人员的极大关注，他们也相应提出了一系列的对抗攻击（如何更有效的产生对抗样本）和对抗防御（针对对抗样本提供更有效的防御）的方法，这一领域称之为对抗学习。对抗学习是一个机器学习与计算机安全的交叉领域，旨在于在恶意环境下（比如在对抗样本的存在的环境下）给机器学习技术提供安全保障。<br>————————————————<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_49669196/article/details/115175771">https://blog.csdn.net/weixin_49669196/article/details/115175771</a></p>
-<h2 id="借助多标签分类器进行对抗训练"><a href="#借助多标签分类器进行对抗训练" class="headerlink" title="借助多标签分类器进行对抗训练"></a>借助多标签分类器进行对抗训练</h2>
+<h2 id="生成对抗网络（GAN）应用于图像分类"><a href="#生成对抗网络（GAN）应用于图像分类" class="headerlink" title="生成对抗网络（GAN）应用于图像分类"></a>生成对抗网络（GAN）应用于图像分类</h2><p>​	与常规的深度学习模型（比如cnn、dbn、rnn）不同，GAN模型采用了两个独立的神经网络，分别称为“generator”和“discriminator”，生成器用于根据输入噪声信号生成‘看上去和真实样本差不多’的高维样本，判别器用于区分生成器产生的样本和真实的训练样本（属于一个二分类问题）。其模型结构框架如下，<br><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221216193103.png"></p>
+<p>​	GANs是基于一个minimax机制而不是通常的优化问题，它所定义的损失函数是关于判别器的最大化和生成器的最小化，作者也证明了GAN模型最终能够收敛，此时判别器模型和生成器模型分别取得最优解。记$x$表示样本数据，p(z)表示生成器的输入噪声分布，G(z; θ)表示噪声到样本空间的映射，D(x)表示x属于真实样本而不是生成样本的概率，那么GAN模型可以定义为如下的优化问题，</p>
+<p><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221216193709.png"></p>
+<pre><code>从以上公式可以看出，在模型的训练过程中，一方面需要修正判别器D，使值函数V最大化，也即使得D(x)最大化和D(G(z))最小化，其数学意义即最大化判别器分类训练样本和生成样本的正确率，另一方面需要修正生成器G，使值函数V最小化，也即使得D(G(z))最大化，其数学意义即生成器要尽量生成和训练样本非常相似的样本
+</code></pre>
+<p>​	早期的GAN模型主要应用于无监督学习任务，即生成和训练样本有相同分布的数据，可以为1维信号或者二维图像。将GAN应用于分类问题时，需要对网络做改动。</p>
+<pre><code>将GAN应用于半监督分类任务时，只需要对最初的GAN的结构做稍微改动，即把discriminator模型的输出层替换成softmax分类器。假设训练数据有c类，那么在训练GAN模型的时候，可以把generator模拟出来的样本归为第c+1类，而softmax分类器也增加一个输出神经元，用于表示discriminator模型的输入为“假数据”的概率，这里的“假数据”具体指generator生成的样本。因为该模型可以利用有标签的训练样本，也可以从无标签的生成数据中学习，所以称之为“半监督”分类。
+</code></pre>
+<p>可想而知，在应用于基于像素的有监督分类问题时（文章中的训练数据集类似于人脸识别数据集，区别在于单幅图像的标签y和输入人脸图像大小相同），GAN中的生成器模型是没有什么作用的。原作者所提出的网络框架包含了两个分类器模型，其中一个用于对单幅图像进行基于像素的分类，另外一个分类器也称作对抗网络，用于区分标签图和预测出来的概率图，引入对抗网络的目的是使得得到的概率预测图更符合真实的标签图，具体的网络结构如下，<br><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221216194626.png"></p>
+<p>其中segmentor是一个分类器而adversarial是对抗网络，输入真实标签与分类器的概率图用于判断两者的区别，使用迭代优化训练两个网络。</p>
+
                 
             </div>
             <hr/>
@@ -536,13 +546,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2022/12/30/2022-12-30-chang-wei-wen-ti/">
+                <a href="/2022/12/15/wu-jian-du-zi-gua-ying-xue-xi-xiang-guan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="长尾问题">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="无监督自适应学习相关">
                         
-                        <span class="card-title">长尾问题</span>
+                        <span class="card-title">无监督自适应学习相关</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -553,7 +563,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-30
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-15
                         </span>
                         <span class="publish-author">
                             
@@ -570,8 +580,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%BA%E6%96%87%E9%A2%84%E8%AF%BB/">
-                        <span class="chip bg-color">论文预读</span>
+                    <a href="/tags/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB-%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-%E8%A7%86%E9%A2%91%E5%8A%A8%E4%BD%9C%E5%AE%9A%E4%BD%8D/">
+                        <span class="chip bg-color">论文理论预读 目标检测 视频动作定位</span>
                     </a>
                     
                 </div>
@@ -760,7 +770,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">9.4k</span>
+                        class="white-color">11.5k</span>
             
             
             
