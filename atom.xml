@@ -46,7 +46,7 @@
     <link href="http://example.com/2022/12/15/dui-kang-xue-xi-xiang-guan/"/>
     <id>http://example.com/2022/12/15/dui-kang-xue-xi-xiang-guan/</id>
     <published>2022-12-15T14:10:25.000Z</published>
-    <updated>2022-12-17T03:12:43.505Z</updated>
+    <updated>2022-12-17T03:24:02.026Z</updated>
     
     
       
@@ -62,7 +62,11 @@
     <category term="论文理论预读" scheme="http://example.com/categories/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB/"/>
     
     
-    <category term="论文理论预读 对抗学习 矮半截" scheme="http://example.com/tags/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB-%E5%AF%B9%E6%8A%97%E5%AD%A6%E4%B9%A0-%E7%9F%AE%E5%8D%8A%E6%88%AA/"/>
+    <category term="论文预读" scheme="http://example.com/tags/%E8%AE%BA%E6%96%87%E9%A2%84%E8%AF%BB/"/>
+    
+    <category term="对抗学习" scheme="http://example.com/tags/%E5%AF%B9%E6%8A%97%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="矮半截" scheme="http://example.com/tags/%E7%9F%AE%E5%8D%8A%E6%88%AA/"/>
     
   </entry>
   
