@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-12-05T06:17:08.000Z</updated>
+  <updated>2022-12-17T03:31:31.602Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2022/12/30/2022-12-30-chang-wei-wen-ti/"/>
     <id>http://example.com/2022/12/30/2022-12-30-chang-wei-wen-ti/</id>
     <published>2022-12-29T16:00:00.000Z</published>
-    <updated>2022-12-05T06:17:08.000Z</updated>
+    <updated>2022-12-17T03:31:31.602Z</updated>
     
     
       
@@ -37,7 +37,11 @@
     <category term="论文理论预读" scheme="http://example.com/categories/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB/"/>
     
     
-    <category term="论文预读" scheme="http://example.com/tags/%E8%AE%BA%E6%96%87%E9%A2%84%E8%AF%BB/"/>
+    <category term="矮半截" scheme="http://example.com/tags/%E7%9F%AE%E5%8D%8A%E6%88%AA/"/>
+    
+    <category term="论文理论预读" scheme="http://example.com/tags/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB/"/>
+    
+    <category term="长尾问题" scheme="http://example.com/tags/%E9%95%BF%E5%B0%BE%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
@@ -46,7 +50,7 @@
     <link href="http://example.com/2022/12/15/dui-kang-xue-xi-xiang-guan/"/>
     <id>http://example.com/2022/12/15/dui-kang-xue-xi-xiang-guan/</id>
     <published>2022-12-15T14:10:25.000Z</published>
-    <updated>2022-12-17T03:28:44.357Z</updated>
+    <updated>2022-12-17T03:30:53.926Z</updated>
     
     
       
@@ -62,11 +66,11 @@
     <category term="论文理论预读" scheme="http://example.com/categories/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB/"/>
     
     
-    <category term="论文预读" scheme="http://example.com/tags/%E8%AE%BA%E6%96%87%E9%A2%84%E8%AF%BB/"/>
-    
     <category term="对抗学习" scheme="http://example.com/tags/%E5%AF%B9%E6%8A%97%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="矮半截" scheme="http://example.com/tags/%E7%9F%AE%E5%8D%8A%E6%88%AA/"/>
+    
+    <category term="论文理论预读" scheme="http://example.com/tags/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB/"/>
     
   </entry>
   
@@ -75,7 +79,7 @@
     <link href="http://example.com/2022/12/15/wu-jian-du-zi-gua-ying-xue-xi-xiang-guan/"/>
     <id>http://example.com/2022/12/15/wu-jian-du-zi-gua-ying-xue-xi-xiang-guan/</id>
     <published>2022-12-15T14:10:25.000Z</published>
-    <updated>2022-12-16T14:59:19.727Z</updated>
+    <updated>2022-12-17T03:30:41.869Z</updated>
     
     
       
@@ -91,7 +95,11 @@
     <category term="论文理论预读" scheme="http://example.com/categories/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB/"/>
     
     
-    <category term="论文理论预读 目标检测 视频动作定位" scheme="http://example.com/tags/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB-%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-%E8%A7%86%E9%A2%91%E5%8A%A8%E4%BD%9C%E5%AE%9A%E4%BD%8D/"/>
+    <category term="矮半截" scheme="http://example.com/tags/%E7%9F%AE%E5%8D%8A%E6%88%AA/"/>
+    
+    <category term="论文理论预读" scheme="http://example.com/tags/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB/"/>
+    
+    <category term="自适应学习" scheme="http://example.com/tags/%E8%87%AA%E9%80%82%E5%BA%94%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -100,7 +108,7 @@
     <link href="http://example.com/2022/12/15/2022-12-15-12-yue-17-ri-zu-hui/"/>
     <id>http://example.com/2022/12/15/2022-12-15-12-yue-17-ri-zu-hui/</id>
     <published>2022-12-14T16:00:00.000Z</published>
-    <updated>2022-12-15T14:06:15.381Z</updated>
+    <updated>2022-12-17T03:31:57.295Z</updated>
     
     
       
@@ -116,7 +124,13 @@
     <category term="论文理论预读" scheme="http://example.com/categories/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB/"/>
     
     
-    <category term="论文理论预读 目标检测 视频动作定位" scheme="http://example.com/tags/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB-%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-%E8%A7%86%E9%A2%91%E5%8A%A8%E4%BD%9C%E5%AE%9A%E4%BD%8D/"/>
+    <category term="论文理论预读" scheme="http://example.com/tags/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB/"/>
+    
+    <category term="目标检测" scheme="http://example.com/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    
+    <category term="视频动作定位" scheme="http://example.com/tags/%E8%A7%86%E9%A2%91%E5%8A%A8%E4%BD%9C%E5%AE%9A%E4%BD%8D/"/>
+    
+    <category term="高一头" scheme="http://example.com/tags/%E9%AB%98%E4%B8%80%E5%A4%B4/"/>
     
   </entry>
   
@@ -125,7 +139,7 @@
     <link href="http://example.com/2022/12/04/2022-12-4-12-yue-1-ri-zu-hui/"/>
     <id>http://example.com/2022/12/04/2022-12-4-12-yue-1-ri-zu-hui/</id>
     <published>2022-12-03T16:00:00.000Z</published>
-    <updated>2022-12-13T12:00:30.237Z</updated>
+    <updated>2022-12-17T03:32:31.921Z</updated>
     
     
       
@@ -141,7 +155,13 @@
     <category term="论文理论预读" scheme="http://example.com/categories/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB/"/>
     
     
-    <category term="论文预读 目标检测 行人重识别" scheme="http://example.com/tags/%E8%AE%BA%E6%96%87%E9%A2%84%E8%AF%BB-%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-%E8%A1%8C%E4%BA%BA%E9%87%8D%E8%AF%86%E5%88%AB/"/>
+    <category term="论文预读" scheme="http://example.com/tags/%E8%AE%BA%E6%96%87%E9%A2%84%E8%AF%BB/"/>
+    
+    <category term="目标检测" scheme="http://example.com/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/"/>
+    
+    <category term="高一头" scheme="http://example.com/tags/%E9%AB%98%E4%B8%80%E5%A4%B4/"/>
+    
+    <category term="行人重识别" scheme="http://example.com/tags/%E8%A1%8C%E4%BA%BA%E9%87%8D%E8%AF%86%E5%88%AB/"/>
     
   </entry>
   
