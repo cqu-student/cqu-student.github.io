@@ -342,20 +342,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB/">
-                                <span class="chip bg-color">论文理论预读</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">
-                                <span class="chip bg-color">目标检测</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%A7%86%E9%A2%91%E5%8A%A8%E4%BD%9C%E5%AE%9A%E4%BD%8D/">
-                                <span class="chip bg-color">视频动作定位</span>
-                            </a>
-                        
-                            <a href="/tags/%E9%AB%98%E4%B8%80%E5%A4%B4/">
-                                <span class="chip bg-color">高一头</span>
+                            <a href="/tags/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB-%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-%E8%A7%86%E9%A2%91%E5%8A%A8%E4%BD%9C%E5%AE%9A%E4%BD%8D/">
+                                <span class="chip bg-color">-论文理论预读 -目标检测 -视频动作定位</span>
                             </a>
                         
                     </div>
@@ -425,13 +413,13 @@
 <p>时序动作检测的很多思路源于图像目标检测(Object Detection),了解目标检测的常见算法和关键思路对学习时序动作定位很有帮助。</p>
 <ol>
 <li><p>基于滑动窗口的算法<br> 思路为预先定义一系列不同时长的滑动窗，之后滑动窗在视频上沿着时间维度进行滑动，并逐一判断每个滑动窗对应的时序区间内具体是什么动作类别。</p>
-<div align="center"><img src="https://raw.githubusercontent.com/cqu-student/Img/main/v2-5156b1f2089ccbbc4ace282b7728b738_r.jpg"></div>
+<div align="center"><img src="https://cdn.jsdelivr.net/gh/cqu-student/Img/v2-acc8b7f7a204428160047b13ec91dc9b_720w.webp"></div>
 </li>
 <li><p>基于候选时序区间的算法<br> 目标检测算法中的两阶段(Two-Stage)算法将目标检测分为两个阶段：第一个阶段产生图像中可能存在目标的候选区域，一般一张图像可以产生成百上千候选区域。第二阶段逐一判断每个候选区域的类别并对候选区域的边界进行修正。</p>
 <p> 类比于两阶段的目标检测算法，基于候选时序区间的时序动作定位算法将整个过程分为两个阶段：第一阶段产生视频中动作可能发生的候选时序区间，第二阶段逐一判断每个候选时序区间的类别并对候选时序区间的边界进行修正。最终将两个阶段的预测结果结合起来，得到未被剪辑视频中动作的类别和起止时刻预测。</p>
 </li>
 </ol>
-<div align="center"><img src="https://raw.githubusercontent.com/cqu-student/Img/main/v2-acc8b7f7a204428160047b13ec91dc9b_720w.webp"></div>
+<div align="center"><img src="https://cdn.jsdelivr.net/gh/cqu-student/Img/v2-5156b1f2089ccbbc4ace282b7728b738_r.jpg"></div>
 
 <ol start="3">
 <li><p>自底向上的时序动作定位算法<br> 首先局部预测视频动作开始和动作结束的时刻，之后将开始和结束时刻组合成候选时序区间，最后对每个候选时序区间进行类别预测。</p>
@@ -460,14 +448,14 @@
 <p>[3] (<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/425497537/answer/1522570410">https://www.zhihu.com/question/425497537/answer/1522570410</a>)</p>
 <h2 id="多实例学习（Multi-Instance-Learning"><a href="#多实例学习（Multi-Instance-Learning" class="headerlink" title="多实例学习（Multi-Instance Learning)"></a>多实例学习（Multi-Instance Learning)</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>&amp;emsp;&amp;emsp;MIL的数据集的单位是bag，以二分类为例，一个bag中包含多个instance，如果所有的instance都被标记为negative，则这个包就是negative，反之这个包为positive。 举例:设想有若干个人，每个人手上有一个钥匙串(bag)，串有若干个钥匙(instance)。已知某个钥匙串能否打开特定的一扇门(training set)。我们的任务是要学习到哪一串钥匙串能打开这扇门，以及哪个钥匙能打开这扇门。</p>
 <p>&amp;emsp;&amp;emsp;预测等级可以分为包预测和示例预测。如图，对包预测而言，红色虚线和紫色虚线都是最优解。对示例预测，只有紫色虚线才是最优解。包预测任务的表现基本上代表不了示例预测的表现。两者最大的区别在于对示例预测错误所付出的代价。包预测只要有就对，示例预测必须全部正确。</p>
-<div align="center"><img src="https://raw.githubusercontent.com/cqu-student/Img/main/v2-7dff0d27019136834a9780c8a5cb356f_720w.webp"></div>
+<div align="center"><img src="https://cdn.jsdelivr.net/gh/cqu-student/Img/v2-7dff0d27019136834a9780c8a5cb356f_720w.webp"></div>
 
 <p>&amp;emsp;&amp;emsp; witness rate(WR): $WR = \frac{positive instances}{total instances}$ WR很高时，可以用常规的监督学习算法来训练。WR很低时，会影响到算法的表现。但是在多模态分类中会出现数据分布的问题，进一步了解可以看链接原文。</p>
 <p>&amp;emsp;&amp;emsp;多模态分类(MIL)可以用于目标检测，由于包的类别不能由单独某个instance学习到,但是可以通过多个instance相互学习到，如检测沙滩，则必须要同时检测到沙和水。</p>
 <p>&amp;emsp;&amp;emsp;在目标定位和分割中从包中学习对示例的分类。比如说，从弱标签数据集训练一个识别系统。弱标签数据集指，对单张图片来说，只标记这张图片里有哪些物体，而不标记这些物体对应的bounding box或者像素级的标记。在视频定位中，一段视频被分成若干段，这些片段被分别进行分类。</p>
 <p>[4] (<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/299819082">https://zhuanlan.zhihu.com/p/299819082</a>)</p>
 <h2 id="特征嵌入"><a href="#特征嵌入" class="headerlink" title="特征嵌入"></a>特征嵌入</h2><p>&amp;emsp;&amp;emsp; 为了存储图像，计算机要存储三个独立的矩阵(矩阵可以理解为二维数组)，三个矩阵分别与此图像的红色、绿色和蓝色相对应。如果图像的大小是64<em>64个像素，则3个64</em>64大小的矩阵在计算机中代表了这张图像。为了便于后续处理，将3个矩阵转化为1个向量x。则向量x的总维数就是64<em>64</em>3，结果为12288。</p>
-<div align="center"><img src="https://raw.githubusercontent.com/cqu-student/Img/main/dab9e87d5e864007968d44e3602eb193.png"></div>              
+<div align="center"><img src="https://cdn.jsdelivr.net/gh/cqu-student/Img/dab9e87d5e864007968d44e3602eb193.png"></div>              
 
 <h1 id="Dual-Evidential-Learning-for-Weakly-supervised-Temporal-Action-Localization"><a href="#Dual-Evidential-Learning-for-Weakly-supervised-Temporal-Action-Localization" class="headerlink" title="Dual-Evidential Learning for Weakly-supervised Temporal Action Localization"></a>Dual-Evidential Learning for Weakly-supervised Temporal Action Localization</h1><h2 id="多标签分类-multi-label-classification"><a href="#多标签分类-multi-label-classification" class="headerlink" title="多标签分类(multi-label classification)"></a>多标签分类(multi-label classification)</h2><h3 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h3><p>&amp;emsp;&amp;emsp;研究的为一个样本由一个样例和一个集合的标签组成。对于一个没见过的样本$x \in X$,多标签分类器$h(·)$预测$h(x)\in Y$作为该样本的标签集合。 </p>
 <h3 id="任务分解"><a href="#任务分解" class="headerlink" title="任务分解"></a>任务分解</h3><p>&amp;emsp;&amp;emsp;MLL包括两个主要任务: 多标签分类(MLC)和标签排序(LR)。</p>
@@ -481,7 +469,7 @@
 <p>EDL的提出论文:</p>
 <p>[5] (<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/445915367">https://zhuanlan.zhihu.com/p/445915367</a>)</p>
 <h2 id="非极大性抑制-non-maximum-suppression-NMS"><a href="#非极大性抑制-non-maximum-suppression-NMS" class="headerlink" title="非极大性抑制 non-maximum-suppression (NMS)"></a>非极大性抑制 non-maximum-suppression (NMS)</h2><p>&amp;emsp;&amp;emsp;抑制不是极大值的元素，可以理解为局部最大搜索。最简单的方法为判断当前元素是否大于其左邻与右邻元素，如果符合条件，则该元素为极大值点。如果不符合条件，则将其右邻[i+1]作为极大值候选，采用单调递增的方式向右查找，直至找到满足I[i]&gt;I[i+1]的元素。</p>
-<div align="center"><img src="https://raw.githubusercontent.com/cqu-student/Img/main/v2-d0ac5772941ae435e028cf7aa4d66e56_r.png"></div>
+<div align="center"><img src="!https://cdn.jsdelivr.net/gh/cqu-student/Img/v2-d0ac5772941ae435e028cf7aa4d66e56_r.png"></div>
 
 <p>目标检测中的非极大性抑制:</p>
 <ol>
@@ -571,20 +559,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB/">
-                                    <span class="chip bg-color">论文理论预读</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">
-                                    <span class="chip bg-color">目标检测</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%A7%86%E9%A2%91%E5%8A%A8%E4%BD%9C%E5%AE%9A%E4%BD%8D/">
-                                    <span class="chip bg-color">视频动作定位</span>
-                                </a>
-                            
-                                <a href="/tags/%E9%AB%98%E4%B8%80%E5%A4%B4/">
-                                    <span class="chip bg-color">高一头</span>
+                                <a href="/tags/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB-%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B-%E8%A7%86%E9%A2%91%E5%8A%A8%E4%BD%9C%E5%AE%9A%E4%BD%8D/">
+                                    <span class="chip bg-color">-论文理论预读 -目标检测 -视频动作定位</span>
                                 </a>
                             
                         </div>
@@ -691,13 +667,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/12/04/2022-12-4-12-yue-1-ri-zu-hui/">
+                <a href="/2022/12/15/2022-12-31-12-yue-31-ri-zu-hui/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="12月1日组会">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="12月17日组会">
                         
-                        <span class="card-title">12月1日组会</span>
+                        <span class="card-title">12月17日组会</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -708,7 +684,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-15
                             </span>
                         <span class="publish-author">
                             
@@ -725,20 +701,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%BA%E6%96%87%E9%A2%84%E8%AF%BB/">
-                        <span class="chip bg-color">论文预读</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/">
-                        <span class="chip bg-color">目标检测</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%AB%98%E4%B8%80%E5%A4%B4/">
-                        <span class="chip bg-color">高一头</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%A1%8C%E4%BA%BA%E9%87%8D%E8%AF%86%E5%88%AB/">
-                        <span class="chip bg-color">行人重识别</span>
+                    <a href="/tags/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB-%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2-%E5%B0%8F%E6%A0%B7%E6%9C%AC%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/">
+                        <span class="chip bg-color">-论文理论预读 -语义分割 -小样本语义分割</span>
                     </a>
                     
                 </div>
@@ -878,7 +842,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;Total Words:&nbsp;<span
-                        class="white-color">11.5k</span>
+                        class="white-color">13.7k</span>
             
             
             
