@@ -8,7 +8,7 @@
       <link href="/2022/12/30/2022-12-30-chang-wei-wen-ti/"/>
       <url>/2022/12/30/2022-12-30-chang-wei-wen-ti/</url>
       
-        <content type="html"><![CDATA[<h1 id="长尾问题"><a href="#长尾问题" class="headerlink" title="长尾问题"></a>长尾问题</h1><p>​在传统的分类任务中，训练数据往往都受到了人工的均衡，即不同类别样本数量没有明显差距。均衡的数据库将极大程度上简化了算法鲁棒性的要求，也一定程度上保障了模型的可靠性，但随着样本类别的增加维持各个类别之间的均衡将带来更大的成本。</p><p>​尤其是对于珍惜动物、与医疗上的罕见病例，部分类别的样本个数极为稀少，获取均衡的数据库几乎不可能。</p><p>​<img src="https://img-blog.csdnimg.cn/1229308b7cad4c33bc6c9a5070006e0b.png#pic_center" alt="img"></p><p>​</p><p>​目前解决长尾问题的解决方案有两种：重采样与重加权。</p><p>​重采样：<img src="C:\Users\de'l'l\AppData\Roaming\Typora\typora-user-images\image-20221130201514898.png" alt="image-20221130201514898"></p><p>​其中C是类别数量，i为样本总数。pj为从j类样本中取样的概率，q为指数。</p><p>​重加权：</p><p>​重加权反应在loss值上，由于loss的计算灵活性，重加权的计算更加简单。在此仅列举通用公式：</p><p>​<img src="C:\Users\de'l'l\AppData\Roaming\Typora\typora-user-images\image-20221130201924508.png" alt="image-20221130201924508"></p><p><a href="https://blog.csdn.net/weixin_42437114/article/details/120439298">(73条消息) Long-tailed Recognition (长尾问题)_连理o的博客-CSDN博客_长尾问题</a></p><p>​分类损失函数（Lcls）</p><h2 id="数据增广："><a href="#数据增广：" class="headerlink" title="数据增广："></a>数据增广：</h2><p>​图像数据准备对<a href="https://so.csdn.net/so/search?q=%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C&amp;spm=1001.2101.3001.7020">神经网络</a>与卷积神经网络模型训练有重要影响，<strong>当样本空间不够或者样本数量不足的时候会严重影响训练或者导致训练出来的模型泛化程度不够，识别率与准确率不高</strong>！本文将会带你学会如何对已有的图像数据进行<a href="https://so.csdn.net/so/search?q=%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA&amp;spm=1001.2101.3001.7020">数据增强</a>，获取样本的多样性与数据的多样性从而为训练模型打下良好基础。在不改变图像类别的情况下，增加数据量，能提高模型的泛化能力。<br>​    不同的视角，不同的大小，物体的形变问题，物体的遮挡问题，光照条件，背景复杂的问题，每一类中有多种形态的问题。<br>​而数据增广的思路也就是解决这个问题。数据增广如何增广就要从实际的问题出发，比如医学的图片基本上拍摄的时候视角是固定的，所以就不需要不同视角的增广。木纹检测中视角是不固定的，就需要不同的视角，不同的大小的增广，还需要应不同的光照条件对数据进行增广。</p><p>​如<strong>GistNet: a Geometric Structure Transfer Network for Long-Tailed Recognition</strong>文中使用了特殊的归一化思路，以将尾样本数据的方差逼近head样本。</p><p>​</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="长尾问题"><a href="#长尾问题" class="headerlink" title="长尾问题"></a>长尾问题</h1><p>​在传统的分类任务中，训练数据往往都受到了人工的均衡，即不同类别样本数量没有明显差距。均衡的数据库将极大程度上简化了算法鲁棒性的要求，也一定程度上保障了模型的可靠性，但随着样本类别的增加维持各个类别之间的均衡将带来更大的成本。</p><p>​尤其是对于珍惜动物、与医疗上的罕见病例，部分类别的样本个数极为稀少，获取均衡的数据库几乎不可能。</p><p>​<img src="https://img-blog.csdnimg.cn/1229308b7cad4c33bc6c9a5070006e0b.png#pic_center" alt="img"></p><p>​</p><p>​目前解决长尾问题的解决方案有两种：重采样与重加权。</p><p>​重采样：<img src="/.com//Users\de'l'l\AppData\Roaming\Typora\typora-user-images\image-20221130201514898.png" alt="image-20221130201514898"></p><p>​其中C是类别数量，i为样本总数。pj为从j类样本中取样的概率，q为指数。</p><p>​重加权：</p><p>​重加权反应在loss值上，由于loss的计算灵活性，重加权的计算更加简单。在此仅列举通用公式：</p><p>​<img src="/.com//Users\de'l'l\AppData\Roaming\Typora\typora-user-images\image-20221130201924508.png" alt="image-20221130201924508"></p><p><a href="https://blog.csdn.net/weixin_42437114/article/details/120439298">(73条消息) Long-tailed Recognition (长尾问题)_连理o的博客-CSDN博客_长尾问题</a></p><p>​分类损失函数（Lcls）</p><h2 id="数据增广："><a href="#数据增广：" class="headerlink" title="数据增广："></a>数据增广：</h2><p>​图像数据准备对<a href="https://so.csdn.net/so/search?q=%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C&amp;spm=1001.2101.3001.7020">神经网络</a>与卷积神经网络模型训练有重要影响，<strong>当样本空间不够或者样本数量不足的时候会严重影响训练或者导致训练出来的模型泛化程度不够，识别率与准确率不高</strong>！本文将会带你学会如何对已有的图像数据进行<a href="https://so.csdn.net/so/search?q=%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA&amp;spm=1001.2101.3001.7020">数据增强</a>，获取样本的多样性与数据的多样性从而为训练模型打下良好基础。在不改变图像类别的情况下，增加数据量，能提高模型的泛化能力。<br>​    不同的视角，不同的大小，物体的形变问题，物体的遮挡问题，光照条件，背景复杂的问题，每一类中有多种形态的问题。<br>​而数据增广的思路也就是解决这个问题。数据增广如何增广就要从实际的问题出发，比如医学的图片基本上拍摄的时候视角是固定的，所以就不需要不同视角的增广。木纹检测中视角是不固定的，就需要不同的视角，不同的大小的增广，还需要应不同的光照条件对数据进行增广。</p><p>​如<strong>GistNet: a Geometric Structure Transfer Network for Long-Tailed Recognition</strong>文中使用了特殊的归一化思路，以将尾样本数据的方差逼近head样本。</p><p>​</p>]]></content>
       
       
       <categories>
@@ -20,11 +20,11 @@
       
         <tags>
             
-            <tag> 矮半截 </tag>
-            
             <tag> 论文理论预读 </tag>
             
             <tag> 长尾问题 </tag>
+            
+            <tag> 矮半截 </tag>
             
         </tags>
       
@@ -37,7 +37,7 @@
       <link href="/2022/12/27/quan-lian-jie-tiao-jian-sui-ji-chang/"/>
       <url>/2022/12/27/quan-lian-jie-tiao-jian-sui-ji-chang/</url>
       
-        <content type="html"><![CDATA[<h1 id="全连接条件随机场"><a href="#全连接条件随机场" class="headerlink" title="全连接条件随机场"></a>全连接条件随机场</h1><h2 id="前置知识："><a href="#前置知识：" class="headerlink" title="前置知识："></a>前置知识：</h2><h3 id><a href="#" class="headerlink" title></a></h3><h3 id="随机场-random-field"><a href="#随机场-random-field" class="headerlink" title="随机场 (random field)"></a>随机场 (random field)</h3><p>由若干位置组成的整体，每一个位置按某种分布随机地赋一个值，全体即组成一个随机场。</p><h3 id="马尔科夫随机场-MRF"><a href="#马尔科夫随机场-MRF" class="headerlink" title="马尔科夫随机场(MRF)"></a>马尔科夫随机场(MRF)</h3><p>马尔科夫随机场是随机场的特例，假设某一个位置的赋值只与和它相邻的位置相关。</p><h3 id="条件随机场-CRF"><a href="#条件随机场-CRF" class="headerlink" title="条件随机场(CRF)"></a>条件随机场(CRF)</h3><p>条件随机场是马尔科夫随机场的特例，假设马尔可夫随机场只有X和Y两个随机变量，一般情况下，X是给定的，Y是输出。<br>  形式化定义：设X和Y是随机变量，P ( Y ∣ X ) P(Y|X)P(Y∣X)是给定X时Y的条件概率分布，若Y构成一个马尔科夫随机场，则P ( Y ∣ X ) P(Y|X)P(Y∣X)是条件随机场。</p><h2 id="全连接条件随机场-1"><a href="#全连接条件随机场-1" class="headerlink" title="全连接条件随机场"></a>全连接条件随机场</h2><p>如下图，有一幅图像：</p><p><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221229224411.png"></p><p>如果说该图像上一点x的值仅跟x的位置相关，我们可以得到如下条件随机场：</p><p><img src="/.com//github博客\cqu-student.github.io\source_posts\全连接条件随机场\20221229224411.png" alt="20221229224411"></p><p>更加复杂地，每一个像素类别和四邻域像素有关，则如下图：</p><p><img src="/.com//github博客\cqu-student.github.io\source_posts\全连接条件随机场\20221229224411-16723259093292.png" alt="20221229224411"></p><p>更复杂的，将四邻域像素全连接的所有关系当作x：</p><p><img src="/.com//github博客\cqu-student.github.io\source_posts\全连接条件随机场\20221229224411-16723260342974.png" alt="20221229224411"></p><p>其中y是如像素颜色的属性。</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="全连接条件随机场"><a href="#全连接条件随机场" class="headerlink" title="全连接条件随机场"></a>全连接条件随机场</h1><h2 id="前置知识："><a href="#前置知识：" class="headerlink" title="前置知识："></a>前置知识：</h2><h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="随机场-random-field"><a href="#随机场-random-field" class="headerlink" title="随机场 (random field)"></a>随机场 (random field)</h3><p>由若干位置组成的整体，每一个位置按某种分布随机地赋一个值，全体即组成一个随机场。</p><h3 id="马尔科夫随机场-MRF"><a href="#马尔科夫随机场-MRF" class="headerlink" title="马尔科夫随机场(MRF)"></a>马尔科夫随机场(MRF)</h3><p>马尔科夫随机场是随机场的特例，假设某一个位置的赋值只与和它相邻的位置相关。</p><h3 id="条件随机场-CRF"><a href="#条件随机场-CRF" class="headerlink" title="条件随机场(CRF)"></a>条件随机场(CRF)</h3><p>条件随机场是马尔科夫随机场的特例，假设马尔可夫随机场只有X和Y两个随机变量，一般情况下，X是给定的，Y是输出。<br>  形式化定义：设X和Y是随机变量，P ( Y ∣ X ) P(Y|X)P(Y∣X)是给定X时Y的条件概率分布，若Y构成一个马尔科夫随机场，则P ( Y ∣ X ) P(Y|X)P(Y∣X)是条件随机场。</p><h2 id="全连接条件随机场-1"><a href="#全连接条件随机场-1" class="headerlink" title="全连接条件随机场"></a>全连接条件随机场</h2><p>如下图，有一幅图像：</p><p><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221229224411.png"></p><p>如果说该图像上一点x的值仅跟x的位置相关，我们可以得到如下条件随机场：</p><p><img src="/.com//github博客\cqu-student.github.io\source_posts\全连接条件随机场\20221229224411.png" alt="20221229224411"></p><p>更加复杂地，每一个像素类别和四邻域像素有关，则如下图：</p><p><img src="/.com//github博客\cqu-student.github.io\source_posts\全连接条件随机场\20221229224411-16723259093292.png" alt="20221229224411"></p><p>更复杂的，将四邻域像素全连接的所有关系当作x：</p><p><img src="/.com//github博客\cqu-student.github.io\source_posts\全连接条件随机场\20221229224411-16723260342974.png" alt="20221229224411"></p><p>其中y是如像素颜色的属性。</p>]]></content>
       
       
       <categories>
@@ -49,13 +49,44 @@
       
         <tags>
             
-            <tag> 矮半截 </tag>
-            
             <tag> 论文理论预读 </tag>
+            
+            <tag> 矮半截 </tag>
             
             <tag> crf </tag>
             
             <tag> 12月31日组会 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>语义分割相关</title>
+      <link href="/2022/12/27/yu-yi-fen-ge-xiang-guan/"/>
+      <url>/2022/12/27/yu-yi-fen-ge-xiang-guan/</url>
+      
+        <content type="html"><![CDATA[<h1 id="语义分割"><a href="#语义分割" class="headerlink" title="语义分割"></a>语义分割</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>语义分割，旨在将图像中的所有像素进行分类，一直是计算机视觉图像领域的主要任务之一。在实际应用中，由于能准确地定位到物体所在区域并以像素级的精度排除掉背景的影响，一直是精细化识别、图像理解的可靠方式。</p><p>但是，构建语义分割数据集需要对每张图像上的每个像素进行标注。据统计，单张1280*720像素的图像分割标注时间约1.5个小时[1]，而动辄上万、十万才能产生理想效果的数据集标注所需要的人力物力让实际业务项目投入产出比极低。</p><p>针对这个问题，仅需图像级标注即可达到接近的分割效果的弱监督语义分割是近年来语义分割相关方向研究的热点。该技术通过利用更简单易得的图像级标注，以训练分类模型的方式获取物体的种子分割区域并优化，从而实现图像的像素级密集性预测。</p><h2 id="弱监督语义分割"><a href="#弱监督语义分割" class="headerlink" title="弱监督语义分割"></a>弱监督语义分割</h2><ol><li><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p>​    根据弱监督信号的形式，常见的弱监督语义分割可分为以下四类（图1）：</p><pre><code>① 图像级标注：仅标注图像中相关物体所属的类别，是最简单的标注；② 物体点标注：标注各个物体上某一点，以及相应类别；③ 物体框标注：标注各个物体所在的矩形框，以及相应类别；④ 物体划线标注：在各个物体上划一条线，以及相应类别。</code></pre><p><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221227214715.png"></p></li></ol><h3 id="2-基于图像级标注的弱监督语义分割步骤"><a href="#2-基于图像级标注的弱监督语义分割步骤" class="headerlink" title="2. 基于图像级标注的弱监督语义分割步骤"></a>2. 基于图像级标注的弱监督语义分割步骤</h3><p>​    基于图像级标注的弱监督语义分割大多采用多模块串联的形式进行，如图</p><p><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221227215036.png"></p><p>​首先，利用图像级标注的图像类别标签通过单标签或多标签分类的方式训练出一个分类模型，该分类模型通过计算图像中相应类别的类别特征响应图CAM[3]来当作分割伪标签的种子区域；接着，使用优化算法（如CRF[4]、AffinityNet[5]等）优化和扩张种子区域，获得最终的像素级的分割伪标签；最后，使用图像数据集和分割伪标签训练传统的分割算法（如Deeplab系列[6]）</p><h2 id="3-CAM"><a href="#3-CAM" class="headerlink" title="3.CAM"></a>3.CAM</h2><p>CAM（Class Activation Mapping）<br>        这篇文章是由周博磊在2016年的CVPR提出，作者发现了即使在没有定位标签的情况下训练好的CNN中间层也具备目标定位的特性，但是这种特性被卷积之后的向量拉伸和连续的全连接层破坏，但若是将最后的多个全连接层换成了全局平均池化层GAP和单个后接Softmax的全连接层，即可保留这种特性。同时，经过简单的计算，可以获取促使CNN用来确认图像属于某一类别的具有类别区分性的区域，即CAM。</p><p><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221229221446.png"></p><p>​其中，CAM的具体计算方式如下（如图3所示）：</p><p>​设fk(x,y)为最后一层卷积层获取的第k个特征图在(x,y)位置的值，wkc是类别c对应最后一层全连接层第k个权重，则类别c的响应特征图CAM在(x,y)位置的值为：</p><p><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221229221554.png"></p><p>​Mc即为CAM。最终CAM的值越大，表示对分类贡献度越高：如图3最后一幅图的热力图红色区域表示CAM值最大，也正是澳洲犬脸部区域。</p><p>​在文章中，作者表示CAM所在区域可直接作为弱监督目标定位的预测，并进行了相关实验，不仅相比当时最好的弱监督定位算法效果提升明显，而且仅需单次前向推理过程即可得到定位框。<br>————————————————</p><p>参考来源：<a href="https://blog.csdn.net/netease_im/article/details/123716966">(81条消息) 弱监督语义分割：从图像级标注快进到像素级预测_网易智企的博客-CSDN博客</a></p><h2 id="4-Grad-CAM"><a href="#4-Grad-CAM" class="headerlink" title="4.Grad-CAM"></a>4.Grad-CAM</h2><p>与cam相似，通过Grad-CAM我们能够绘制出如下的热力图（对应给定类别，网络到底关注哪些区域）。但cam仍有部分缺陷即需要修改网络结构并且重新训练，Grad-CAM完美避开了这些问题。</p><p><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221229222018.png"></p><p>作者训练了一个二分类网络，Nurse和Doctor。如下图所示，第一列是预测时输入的原图，第二列是Biased model（具有偏见的模型）通过Grad-CAM绘制的热力图。第三列是Unbiased model（不具偏见的模型）通过Grad-CAM绘制的热力图。通过对比发现，Biased model对于Nurse（护士）这个类别关注的是人的性别，可能模型认为Nurse都是女性，很明显这是带有偏见的。比如第二行第二列这个图，明明是个女Doctor（医生），但Biased model却认为她是Nurse（因为模型关注到这是个女性）。而Unbiased model关注的是Nurse和Doctor使用的工作器具以及服装，明显这更合理。</p><p><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221229222222.png"></p><p>​与cam不同的是：grad-cam使用的不是最后一层卷积输出的数据而是对每个点的数据关于最终权重y求一个偏导。将整个图片的偏导求和后与图片相乘得到输出结果。</p><p>​详细公式如下：</p><p>​<img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221229223009.png"></p><p><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221229223037.png"></p><p>下面链接里作者给出了具体的例子与代码！</p><p>————————————————<br>原文链接：<a href="https://blog.csdn.net/qq_37541097/article/details/123089851">https://blog.csdn.net/qq_37541097/article/details/123089851</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 论文理论预读 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 论文理论预读 </tag>
+            
+            <tag> 矮半截 </tag>
+            
+            <tag> 12月31日组会 </tag>
+            
+            <tag> 语义分割 </tag>
             
         </tags>
       
@@ -80,11 +111,11 @@
       
         <tags>
             
-            <tag> 对抗学习 </tag>
+            <tag> 论文理论预读 </tag>
             
             <tag> 矮半截 </tag>
             
-            <tag> 论文理论预读 </tag>
+            <tag> 对抗学习 </tag>
             
         </tags>
       
@@ -109,9 +140,9 @@
       
         <tags>
             
-            <tag> 矮半截 </tag>
-            
             <tag> 论文理论预读 </tag>
+            
+            <tag> 矮半截 </tag>
             
             <tag> 自适应学习 </tag>
             
@@ -163,7 +194,13 @@
       
         <tags>
             
-            <tag> -论文理论预读 -语义分割 -小样本语义分割 </tag>
+            <tag> 论文理论预读 </tag>
+            
+            <tag> 高一头 </tag>
+            
+            <tag> 语义分割 </tag>
+            
+            <tag> 小样本语义分割 </tag>
             
         </tags>
       
@@ -192,9 +229,9 @@
             
             <tag> 目标检测 </tag>
             
-            <tag> 高一头 </tag>
-            
             <tag> 行人重识别 </tag>
+            
+            <tag> 高一头 </tag>
             
         </tags>
       
