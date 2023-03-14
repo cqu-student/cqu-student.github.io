@@ -4,10 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="对抗学习相关, half-high and half-long">
-    <meta name="description" content="对抗学习对抗学习的基本概念​	
-什么是对抗学习？机器学习这一技术自出现之始就以优异的性能应用于各个领域。近年来，随着机器学习的快速发展与广泛应用，这一领域更是得到前所未有的蓬勃发展。
-目前, 机器学习在计算机视觉、语音识别、自然语言处理等复">
+    <meta name="keywords" content="half-high and half-long">
+    <meta name="description" content="胶囊内镜文献阅读笔记
+
+该论文的过程分为三个部分：
+1.使用封层聚类将图片集分为不同的类
+2.提取显著性特征
+3.使用特征对图片进行阈值化处理提取关键帧
+
+3.1.基于密集特征的FSL的公式化​		在N-way K-shot集中，目标是预测">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +24,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>对抗学习相关 | half-high and half-long</title>
+    <title>half-high and half-long</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -315,12 +320,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">对抗学习相关</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -342,33 +347,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB/">
-                                <span class="chip bg-color">论文理论预读</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%9F%AE%E5%8D%8A%E6%88%AA/">
-                                <span class="chip bg-color">矮半截</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%AF%B9%E6%8A%97%E5%AD%A6%E4%B9%A0/">
-                                <span class="chip bg-color">对抗学习</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">No tag</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB/" class="post-category">
-                                论文理论预读
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -377,28 +361,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-12-15
+                    2023-01-14
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2022-12-17
+                    2023-01-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    1.8k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    6 Min
+                    5 Min
                 </div>
                 
 
@@ -418,27 +402,65 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="对抗学习"><a href="#对抗学习" class="headerlink" title="对抗学习"></a>对抗学习</h1><h2 id="对抗学习的基本概念"><a href="#对抗学习的基本概念" class="headerlink" title="对抗学习的基本概念"></a>对抗学习的基本概念</h2><p>​	</p>
-<p>什么是对抗学习？<br>机器学习这一技术自出现之始就以优异的性能应用于各个领域。近年来，随着机器学习的快速发展与广泛应用，这一领域更是得到前所未有的蓬勃发展。</p>
-<p>目前, 机器学习在计算机视觉、语音识别、自然语言处理等复杂任务中取得了公认的成果，已经被广泛应用于自动驾驶、人脸识别等领域。随着机器学习技术遍地开花，逐渐深入人们的生活，其也被应用在许多例如安防、金融、医疗等对安全有严格要求的领域中，直接影响着人们的人身、财产和隐私的安危。</p>
-<p>在一系列重大进展面前, 机器学习在越来越多的被应用到人类生活的方方面面，在这时人们也很容易忽视阳光背后的阴影。与很多实用性技术一样，机器学习作为一个复杂的计算机系统，同样面临着安全性的考验，同样会面临黑客攻击，也被发现存在着安全性问题，它们干扰机器学习系统输出正确结果，例如对抗样本（adversarial data）的存在。</p>
-<p>研究人员发现，一些精心设计的对抗样本可以使机器学习模型输出错误的结果。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20210324141217456.jpg"></p>
-<p>如图所示，一张正常的大熊猫图片（左图）在被加入噪声后生成对抗样本（右图），会使得神经网络分类错误，并被神经网络认为是一张长臂猿图片，然而人类并不能察觉到这种变化。[1]</p>
-<p>对抗样本是指将真实的样本添加扰动而合成的新样本，是由深度神经网络的输入的数据和人工精心设计好的噪声合成得到的，但它不会被人类视觉系统识别错误。然而在对抗数据面前，深度神经网络却是脆弱的，可以轻易迷惑深度神经网络。</p>
-<p>深度神经网络对于对抗样本的判错率非常高，而人几乎无法辨别原样本与对抗样本的差别，这就意味着原本深度神经网络的功能已经失效了，不具有媲美人类的智能了。</p>
-<p>由此可见，对抗攻击的危害很大，尤其是对于无人驾驶、医疗诊断、金融分析这些安全至关重要的领域。对抗样本无疑制约着机器学习技术的进一步应用，因此，提升神经网络的对抗鲁棒性（抵御对抗样本的能力）变得十分重要。</p>
-<p>于是，机器学习中的对抗样本引起了研究人员的极大关注，他们也相应提出了一系列的对抗攻击（如何更有效的产生对抗样本）和对抗防御（针对对抗样本提供更有效的防御）的方法，这一领域称之为对抗学习。对抗学习是一个机器学习与计算机安全的交叉领域，旨在于在恶意环境下（比如在对抗样本的存在的环境下）给机器学习技术提供安全保障。<br>————————————————<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_49669196/article/details/115175771">https://blog.csdn.net/weixin_49669196/article/details/115175771</a></p>
-<h2 id="生成对抗网络（GAN）应用于图像分类"><a href="#生成对抗网络（GAN）应用于图像分类" class="headerlink" title="生成对抗网络（GAN）应用于图像分类"></a>生成对抗网络（GAN）应用于图像分类</h2><p>​	与常规的深度学习模型（比如cnn、dbn、rnn）不同，GAN模型采用了两个独立的神经网络，分别称为“generator”和“discriminator”，生成器用于根据输入噪声信号生成‘看上去和真实样本差不多’的高维样本，判别器用于区分生成器产生的样本和真实的训练样本（属于一个二分类问题）。其模型结构框架如下，<br><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221216193103.png"></p>
-<p>​	GANs是基于一个minimax机制而不是通常的优化问题，它所定义的损失函数是关于判别器的最大化和生成器的最小化，作者也证明了GAN模型最终能够收敛，此时判别器模型和生成器模型分别取得最优解。记$x$表示样本数据，p(z)表示生成器的输入噪声分布，G(z; θ)表示噪声到样本空间的映射，D(x)表示x属于真实样本而不是生成样本的概率，那么GAN模型可以定义为如下的优化问题，</p>
-<p><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221216193709.png"></p>
-<pre><code>从以上公式可以看出，在模型的训练过程中，一方面需要修正判别器D，使值函数V最大化，也即使得D(x)最大化和D(G(z))最小化，其数学意义即最大化判别器分类训练样本和生成样本的正确率，另一方面需要修正生成器G，使值函数V最小化，也即使得D(G(z))最大化，其数学意义即生成器要尽量生成和训练样本非常相似的样本
-</code></pre>
-<p>​	早期的GAN模型主要应用于无监督学习任务，即生成和训练样本有相同分布的数据，可以为1维信号或者二维图像。将GAN应用于分类问题时，需要对网络做改动。</p>
-<pre><code>将GAN应用于半监督分类任务时，只需要对最初的GAN的结构做稍微改动，即把discriminator模型的输出层替换成softmax分类器。假设训练数据有c类，那么在训练GAN模型的时候，可以把generator模拟出来的样本归为第c+1类，而softmax分类器也增加一个输出神经元，用于表示discriminator模型的输入为“假数据”的概率，这里的“假数据”具体指generator生成的样本。因为该模型可以利用有标签的训练样本，也可以从无标签的生成数据中学习，所以称之为“半监督”分类。
-</code></pre>
-<p>可想而知，在应用于基于像素的有监督分类问题时（文章中的训练数据集类似于人脸识别数据集，区别在于单幅图像的标签y和输入人脸图像大小相同），GAN中的生成器模型是没有什么作用的。原作者所提出的网络框架包含了两个分类器模型，其中一个用于对单幅图像进行基于像素的分类，另外一个分类器也称作对抗网络，用于区分标签图和预测出来的概率图，引入对抗网络的目的是使得得到的概率预测图更符合真实的标签图，具体的网络结构如下，<br><img src="https://cdn.jsdelivr.net/gh/half-lang/img-of-tian/20221216194626.png"></p>
-<p>其中segmentor是一个分类器而adversarial是对抗网络，输入真实标签与分类器的概率图用于判断两者的区别，使用迭代优化训练两个网络。</p>
+                <h1 id="胶囊内镜文献阅读笔记"><a href="#胶囊内镜文献阅读笔记" class="headerlink" title="胶囊内镜文献阅读笔记"></a>胶囊内镜文献阅读笔记</h1><p><img src="https://gitee.com/half-lang/img/raw/master/202301132225291.png" alt="image-20230113222526251"></p>
+<p><img src="https://gitee.com/half-lang/img/raw/master/202301132224123.png" alt="image-20230113222420980"></p>
+<p>该论文的过程分为三个部分：</p>
+<p>1.使用封层聚类将图片集分为不同的类</p>
+<p>2.提取显著性特征</p>
+<p>3.使用特征对图片进行阈值化处理提取关键帧</p>
+<p><img src="https://gitee.com/half-lang/img/raw/master/202301192209376.png" alt="image-20230119220944196"></p>
+<h3 id="3-1-基于密集特征的FSL的公式化"><a href="#3-1-基于密集特征的FSL的公式化" class="headerlink" title="3.1.基于密集特征的FSL的公式化"></a>3.1.基于密集特征的FSL的公式化</h3><p>​		在N-way K-shot集中，目标是预测给定N个支持类的单个查询图像的类标签，每个支持类包含K个支持图像。</p>
+<p>​		输入图像编码为r个二维密集特征<img src="https://gitee.com/half-lang/img/raw/master/202301192212683.png" alt="image-20230119221225658"></p>
+<p>​		 q={q1，…，qr}来表示查询图像中的密集特征。</p>
+<p>​		<img src="https://gitee.com/half-lang/img/raw/master/202301192215945.png" alt="image-20230119221524906" style="zoom: 50%;">将K个不同图像的相同空间位置的特征向量的平均为每个类别的支持密集特征。</p>
+<p>​		<strong>q和s</strong>表示一组特征向量，q和s表示单个特征向量。</p>
+<p>​		<img src="https://gitee.com/half-lang/img/raw/master/202301192218285.png" alt="image-20230119221823258" style="zoom: 50%;">所有支持类的稠密特征的并集。</p>
+<h3 id="3-2-密度特征上的双向随机行走"><a href="#3-2-密度特征上的双向随机行走" class="headerlink" title="3.2.密度特征上的双向随机行走"></a>3.2.密度特征上的双向随机行走</h3><p>​		<img src="https://gitee.com/half-lang/img/raw/master/202301192221931.png" alt="image-20230119222151902" style="zoom:50%;">表示v1，v2向量的余弦相似度</p>
+<p>​		给定两个密集特征集q和S，我们学习这两个不相交集之间的余弦相似矩阵Φ∈Rr×Nr，其中[Φ]qs=φ（q，S）。</p>
+<p>​		<img src="https://gitee.com/half-lang/img/raw/master/202301192226666.png" alt="image-20230119222638628" style="zoom:50%;">表示每个查询图像随机游走到支持图像的概率。可表示为<img src="https://gitee.com/half-lang/img/raw/master/202301192228723.png" alt="image-20230119222848679" style="zoom:50%;"></p>
+<p>γ是softmax系数；D是对角归一化矩阵，元素为[Φ]qs</p>
+<p>​		<img src="https://gitee.com/half-lang/img/raw/master/202301192231786.png" alt="image-20230119223147755" style="zoom:50%;">同样用这个方法连接支持集到查询集的随机游走概率。</p>
+<p>​		假定一个粒子的游走概率遵从上述概率，我们可以用马尔科夫链表示：</p>
+<p>​		<img src="https://gitee.com/half-lang/img/raw/master/202301192234564.png" alt="image-20230119223448518" style="zoom:50%;"></p>
+<p>​		矩阵形式表示为：<img src="https://gitee.com/half-lang/img/raw/master/202301192235596.png" alt="image-20230119223552561" style="zoom:50%;"></p>
+<p>​		当无限次随机游走后粒子的分布将遵循：</p>
+<p>​		<img src="https://gitee.com/half-lang/img/raw/master/202301192237239.png" alt="image-20230119223717199"></p>
+<p>​		使用这些静态分布来编码相互关联的动机很简单：如果支持特征与查询特征具有相同的局部特征，那么在长时间的双向随机游走中，支持特征将经常被访问。换句话说，由于相互接近，可以预测与查询图像拥有最多相互关联的支持类。</p>
+<p>​		我们假设粒子在空间Z中均匀分布，根据在Xt内某个类被访问的数量表示类c为查询图像拥有的局部特征量：查询图像拥有的局部特征量：</p>
+<p><img src="https://gitee.com/half-lang/img/raw/master/202301192249715.png" alt="image-20230119224911560"></p>
+<p>​		其中1[·]是一个指示函数，如果其参数为真，则等于1，否则为0。[·]ij表示从粒子j到粒子i的矩阵入口，[·]i表示与特征i相关的向量入口。</p>
+<h3 id="3-4-用图论解释"><a href="#3-4-用图论解释" class="headerlink" title="3.4.用图论解释"></a>3.4.用图论解释</h3><p>​		为了在图论中看到这一点，我们首先简要概述了特征向量中心性，该中心性反映了具有邻接{av1，v2}的从属网络中q∈q和s∈s的顶点v的得分x：</p>
+<p>​		<img src="https://gitee.com/half-lang/img/raw/master/202301201644144.png" alt="image-20230120164435079" style="zoom:50%;"></p>
+<p>​	V(·) 表示邻域</p>
+<p>​	<img src="https://gitee.com/half-lang/img/raw/master/202301201647761.png" alt="image-20230120164739693"></p>
+<p>​		引入了衰减因子α来表示中心性。</p>
+<p><img src="https://gitee.com/half-lang/img/raw/master/202301201651747.png" alt="image-20230120165116691"></p>
+<p>​		图2:我们的三向单镜头分类框架。给定查询和支持图像，我们首先提取它们的密集特征q和S，这是两组特征向量。然后计算它们的相似矩阵Φ。之后，我们基于缩放和列归一化的相似度矩阵来构建概率矩阵P。我们通过方程中的Katz近似获得了平稳分布π（S）和π（q）。（12） 以及引理1。最后，我们将它们用于端到端FSL，并作为基于全局特征的FSL中的中心插件。我们探索了受[35]启发的三个密集特征提取器（即，VanillaFCN、PyramidFCN和PyramidGrid）来提取密集特征表示。</p>
+<p>（fcn：全卷积神经网络）</p>
+<p>我们在实验中探索了三个密集特征提取器，如图2所示：</p>
+<p>（1）VanillaFCN简单地将全卷积网络的特征图输出视为密集特征。</p>
+<p>（2） PyramidFCN使用额外的自适应平均池化层来获得每个图像的34个密集特征。</p>
+<p>（3） PyramidGrid将图像均匀地裁剪成大小为2×2+3×3的网格，并将每个网格单元单独编码为特征向量。来自所有单元的特征向量构成密集特征集。</p>
+<p>​	由于MCL学习到的潜在中心性揭示了局部特征在从属网络上的不同重要性，因此，将其插入基于全局特征的方法中是可行的，方法是用中心性加权池代替它们的本地全局平均池（GAP），如下所示：</p>
+<p>a.提取每个输入图像的密集特征。</p>
+<p>b、 通过等式计算特征向量中心性xEigen。(12).</p>
+<p> c、 根据引理1中单模中心性的定义计算π（S）和π（q）。</p>
+<p>d、 使用π（q）作为查询密集特征的权重，并将其加权累积为单个特征向量。</p>
+<p>e、 使用来自π（S）的逐类归一化中心性来累积每个支持类的密集特征。一旦我们获得了查询图像和支持类的中心性加权特征，就可以像以前一样直接执行传统的基于全局特征的方法。</p>
+<h3 id="实验部分："><a href="#实验部分：" class="headerlink" title="实验部分："></a>实验部分：</h3><p>我们在两个广泛使用的FSL数据集和三个细粒度数据集上进行了实验：（1）miniImageNet[30]在100个类中每个类包含600个图像。我们遵循[23]使用的分割法，分别采用64、16和20类进行训练/评估/测试；（2） tieredImageNet[22]比具有608个类的miniImageNet大得多。</p>
+<p>我使用miniimagenet数据集：</p>
+<p>具体处理如下：</p>
+<p><img src="https://gitee.com/half-lang/img/raw/master/202301201724742.png" alt="image-20230120172442656"></p>
+<p>预训练：</p>
+<p><img src="https://gitee.com/half-lang/img/raw/master/202301201725212.png" alt="image-20230120172541169"></p>
+<p><img src="https://gitee.com/half-lang/img/raw/master/202301201726066.png" alt="image-20230120172606025"></p>
+<p>原论文是训练300个epoch，目前还没有训练完。</p>
+<p>原论文结果分析：</p>
+<p><img src="https://gitee.com/half-lang/img/raw/master/202301201729956.png" alt="image-20230120172950879"></p>
+<p>​		表1。miniImageNet和tieredImageNet上的镜头分类精度很少。10000集评估的95%置信区间均低于0.2。斜体字体的结果表明MCL作为插件的性能。粗体字体的结果分别是不同密集特征提取器的最佳结果。我们在统一框架中重新实施了我们的插件基线方法（即ProtoNet和RelationNet）以及具有竞争力的基于密集特征的方法（即DN4、DeepEMD和FRN），以防其性能在特定设置下不可用。†：在Conv-4主干上重新实现的结果，‡：在两个主干上重新实施的结果。</p>
+<p><img src="https://gitee.com/half-lang/img/raw/master/202301201732339.png" alt="image-20230120173252293"></p>
+<p><strong>通过修改局部特征在全局池化中的权重来得到更加鲁棒的特征表示</strong></p>
+<p>​		</p>
 
                 
             </div>
@@ -455,7 +477,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">矮半截</a>
+                    <a href="/about" rel="external nofollow noreferrer">half-high and half-long</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -465,7 +487,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/12/15/dui-kang-xue-xi-xiang-guan/">http://example.com/2022/12/15/dui-kang-xue-xi-xiang-guan/</a>
+                    <a href="http://example.com/2023/01/14/xiao-nang-nei-jing-wen-xian-yue-du-bi-ji/">http://example.com/2023/01/14/xiao-nang-nei-jing-wen-xian-yue-du-bi-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -478,7 +500,7 @@
                     All articles in this blog are used except for special statements
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     reprint policy. If reproduced, please indicate source
-                    <a href="/about" target="_blank">矮半截</a>
+                    <a href="/about" target="_blank">half-high and half-long</a>
                     !
                 </span>
             </div>
@@ -502,19 +524,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E8%AE%BA%E6%96%87%E7%90%86%E8%AE%BA%E9%A2%84%E8%AF%BB/">
-                                    <span class="chip bg-color">论文理论预读</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%9F%AE%E5%8D%8A%E6%88%AA/">
-                                    <span class="chip bg-color">矮半截</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%AF%B9%E6%8A%97%E5%AD%A6%E4%B9%A0/">
-                                    <span class="chip bg-color">对抗学习</span>
-                                </a>
-                            
+                            <span class="chip bg-color">No tag</span>
                         </div>
                     
                 </div>
@@ -562,13 +572,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2022/12/27/yu-yi-fen-ge-xiang-guan/">
+                <a href="/2023/03/15/3-15-zu-hui/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="语义分割相关">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="3月15日组会">
                         
-                        <span class="card-title">语义分割相关</span>
+                        <span class="card-title">3月15日组会</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -579,7 +589,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-27
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-03-15
                         </span>
                         <span class="publish-author">
                             
@@ -604,12 +614,16 @@
                         <span class="chip bg-color">矮半截</span>
                     </a>
                     
-                    <a href="/tags/12%E6%9C%8831%E6%97%A5%E7%BB%84%E4%BC%9A/">
-                        <span class="chip bg-color">12月31日组会</span>
+                    <a href="/tags/%E5%A4%9A%E5%AE%9E%E4%BE%8B%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">多实例学习</span>
                     </a>
                     
-                    <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/">
-                        <span class="chip bg-color">语义分割</span>
+                    <a href="/tags/%E5%A4%9A%E4%BB%BB%E5%8A%A1%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">多任务学习</span>
+                    </a>
+                    
+                    <a href="/tags/3%E6%9C%8815%E6%97%A5%E7%BB%84%E4%BC%9A/">
+                        <span class="chip bg-color">3月15日组会</span>
                     </a>
                     
                 </div>
@@ -623,13 +637,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/12/15/wu-jian-du-zi-gua-ying-xue-xi-xiang-guan/">
+                <a href="/2022/12/30/2022-12-30-chang-wei-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="无监督自适应学习相关">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="长尾问题">
                         
-                        <span class="card-title">无监督自适应学习相关</span>
+                        <span class="card-title">长尾问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -640,7 +654,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-30
                             </span>
                         <span class="publish-author">
                             
@@ -661,12 +675,12 @@
                         <span class="chip bg-color">论文理论预读</span>
                     </a>
                     
-                    <a href="/tags/%E7%9F%AE%E5%8D%8A%E6%88%AA/">
-                        <span class="chip bg-color">矮半截</span>
+                    <a href="/tags/%E9%95%BF%E5%B0%BE%E9%97%AE%E9%A2%98/">
+                        <span class="chip bg-color">长尾问题</span>
                     </a>
                     
-                    <a href="/tags/%E8%87%AA%E9%80%82%E5%BA%94%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">自适应学习</span>
+                    <a href="/tags/%E7%9F%AE%E5%8D%8A%E6%88%AA/">
+                        <span class="chip bg-color">矮半截</span>
                     </a>
                     
                 </div>
