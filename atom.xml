@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-03-14T14:34:29.777Z</updated>
+  <updated>2023-03-14T14:45:54.240Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="http://example.com/2023/03/15/3-15-zu-hui/"/>
     <id>http://example.com/2023/03/15/3-15-zu-hui/</id>
     <published>2023-03-14T16:00:00.000Z</published>
-    <updated>2023-03-14T14:34:29.777Z</updated>
+    <updated>2023-03-14T14:45:54.240Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;#3/15日论文预读&lt;br&gt;[toc]&lt;/p&gt;
+    <summary type="html">&lt;p&gt;[toc]&lt;br&gt;#3/15日论文预读&lt;/p&gt;
 &lt;h2 id=&quot;MIL&quot;&gt;&lt;a href=&quot;#MIL&quot; class=&quot;headerlink&quot;</summary>
         
       
@@ -125,9 +125,9 @@
     
     <category term="矮半截" scheme="http://example.com/tags/%E7%9F%AE%E5%8D%8A%E6%88%AA/"/>
     
-    <category term="crf" scheme="http://example.com/tags/crf/"/>
-    
     <category term="12月31日组会" scheme="http://example.com/tags/12%E6%9C%8831%E6%97%A5%E7%BB%84%E4%BC%9A/"/>
+    
+    <category term="crf" scheme="http://example.com/tags/crf/"/>
     
   </entry>
   
@@ -156,9 +156,9 @@
     
     <category term="矮半截" scheme="http://example.com/tags/%E7%9F%AE%E5%8D%8A%E6%88%AA/"/>
     
-    <category term="12月31日组会" scheme="http://example.com/tags/12%E6%9C%8831%E6%97%A5%E7%BB%84%E4%BC%9A/"/>
-    
     <category term="语义分割" scheme="http://example.com/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
+    
+    <category term="12月31日组会" scheme="http://example.com/tags/12%E6%9C%8831%E6%97%A5%E7%BB%84%E4%BC%9A/"/>
     
   </entry>
   
@@ -270,11 +270,11 @@
     
     <category term="高一头" scheme="http://example.com/tags/%E9%AB%98%E4%B8%80%E5%A4%B4/"/>
     
-    <category term="12月31日组会" scheme="http://example.com/tags/12%E6%9C%8831%E6%97%A5%E7%BB%84%E4%BC%9A/"/>
-    
     <category term="语义分割" scheme="http://example.com/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
     
     <category term="小样本语义分割" scheme="http://example.com/tags/%E5%B0%8F%E6%A0%B7%E6%9C%AC%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
+    
+    <category term="12月31日组会" scheme="http://example.com/tags/12%E6%9C%8831%E6%97%A5%E7%BB%84%E4%BC%9A/"/>
     
   </entry>
   
