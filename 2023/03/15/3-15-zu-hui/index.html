@@ -429,6 +429,7 @@ MIL多实例学习数据格式：数据的基本单位是bag。数据的positive
 <h2 id="MIL"><a href="#MIL" class="headerlink" title="MIL"></a>MIL</h2><h2 id="多实例学习"><a href="#多实例学习" class="headerlink" title="多实例学习"></a>多实例学习</h2><h4 id="数据格式："><a href="#数据格式：" class="headerlink" title="数据格式："></a>数据格式：</h4><p>数据的基本单位是<strong>bag</strong>。数据的<strong>positive</strong>与<strong>negative</strong>定义如下：<br>一个bag中包含多个instance，如果<strong>所有</strong>的instance都被标记为negative，那么这个包就是negative，反之这个包为positive。<br><strong>公式表示如下：</strong><br><img src="https://gitee.com/half-lang/img/raw/master/202303141632218.png"></p>
 <p>当一个<strong>bag</strong>中左右的例子都为负例时该包被称作负包，反之为正包</p>
 <h4 id="问题应用场景："><a href="#问题应用场景：" class="headerlink" title="问题应用场景："></a>问题应用场景：</h4><p>多实例学习的应用与弱监督相似，具体为假设每一个<strong>bag</strong>为一组密码，对于一个<strong>任务task</strong>，有一个密码密码是能够解密的。那么训练的目的是为了分辨出哪组密码中含有可以解密的密码并指出哪条密码可以解密。<br>又比如某网站希望建立一组防火墙以屏蔽某些敏感词汇，但将所有敏感词汇标为负样本工作量过大，于是程序员使用孙笑川吧的发言作为负包（<strong>negative bag</strong>）在此假设孙吧属鼠的所有发言都是敏感词汇，同时使用语文课本上的句子（<strong>positive bag</strong>）作为正包进行训练。但值得注意的是课本上并不是所有的样本都是正样本，如鲁智深拳打镇关西中：鲁达：呸！俺只道那个郑大官人，却原来是杀猪的郑屠，这个<strong>腌臜泼才！</strong></p>
+<div>
 <center>
     <img style="border-radius: 0.3125em;
     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://gitee.com/half-lang/img/raw/master/202303141653078.png">
@@ -438,6 +439,7 @@ MIL多实例学习数据格式：数据的基本单位是bag。数据的positive
     color: #999;
     padding: 2px;">鲁智深拳打镇关西</div>
 </center>
+</div>
 
 <h4 id="问题求解方法"><a href="#问题求解方法" class="headerlink" title="问题求解方法"></a>问题求解方法</h4><p>假如我们已经知道所有的样本标注，这将转换为一个全监督问题。但实施情况是对于<strong>negative bag</strong> 显然所有的样本都是负样本，同时对于<strong>positive bag</strong> 我们不知道所有样本的标签。<br>解决这个问题的方法其实挺直接的：**迭代优化（alternative optimization)**。也就是说，我们先假设已经知道了所有样本的标记，那么就可以通过某种监督学习的方法得到一个分类模型，通过这个模型我们可以对每个训练样本进行预测，然后更新它们的标记，我们又可以拿这一次新得到的标记重新训练分类模型了。所以整个优化过程分为两部分：监督学习，标记更新。</p>
 <p>多实例学习模型的基本流程：</p>
