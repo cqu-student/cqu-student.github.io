@@ -8,7 +8,7 @@
       <link href="/2023/03/15/3-15-zu-hui/"/>
       <url>/2023/03/15/3-15-zu-hui/</url>
       
-        <content type="html"><![CDATA[<p>[toc]<br>#3/15日论文预读</p><h2 id="MIL"><a href="#MIL" class="headerlink" title="MIL"></a>MIL</h2><p>##<strong>多实例学习</strong></p><p>####<strong>数据格式：</strong></p><p>数据的基本单位是<strong>bag</strong>。数据的<strong>positive</strong>与<strong>negative</strong>定义如下：<br>一个bag中包含多个instance，如果<strong>所有</strong>的instance都被标记为negative，那么这个包就是negative，反之这个包为positive。<br><strong>公式表示如下：</strong><br><img src="https://gitee.com/half-lang/img/raw/master/202303141632218.png"><br>当一个<strong>bag</strong>中左右的例子都为负例时该包被称作负包，反之为正包</p><p>####问题应用场景：</p><p>多实例学习的应用与弱监督相似，具体为假设每一个<strong>bag</strong>为一组密码，对于一个<strong>任务task</strong>，有一个密码密码是能够解密的。那么训练的目的是为了分辨出哪组密码中含有可以解密的密码并指出哪条密码可以解密。<br>又比如某网站希望建立一组防火墙以屏蔽某些敏感词汇，但将所有敏感词汇标为负样本工作量过大，于是程序员使用孙笑川吧的发言作为负包（<strong>negative bag</strong>）在此假设孙吧属鼠的所有发言都是敏感词汇，同时使用语文课本上的句子（<strong>positive bag</strong>）作为正包进行训练。但值得注意的是课本上并不是所有的样本都是正样本，如鲁智深拳打镇关西中：鲁达：呸！俺只道那个郑大官人，却原来是杀猪的郑屠，这个<strong>腌臜泼才！</strong></p><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://gitee.com/half-lang/img/raw/master/202303141653078.png">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">鲁智深拳打镇关西</div></center><p>####问题求解方法</p><p>假如我们已经知道所有的样本标注，这将转换为一个全监督问题。但实施情况是对于<strong>negative bag</strong> 显然所有的样本都是负样本，同时对于<strong>positive bag</strong> 我们不知道所有样本的标签。<br>解决这个问题的方法其实挺直接的：**迭代优化（alternative optimization)**。也就是说，我们先假设已经知道了所有样本的标记，那么就可以通过某种监督学习的方法得到一个分类模型，通过这个模型我们可以对每个训练样本进行预测，然后更新它们的标记，我们又可以拿这一次新得到的标记重新训练分类模型了。所以整个优化过程分为两部分：监督学习，标记更新。</p><p>多实例学习模型的基本流程：</p><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://gitee.com/half-lang/img/raw/master/202303141723131.png">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">多实例学习的流程</div></center>1.将实例转换为低维嵌入（特征提取）<p>2.通过置换不变聚合函数传递嵌入<br>3.预测包类别的概率</p><p>另一篇博客中也有多实例学习的描述：<br><a href="https://cqu-student.github.io/2022/12/15/2022-12-15-12-yue-17-ri-zu-hui/">https://cqu-student.github.io/2022/12/15/2022-12-15-12-yue-17-ri-zu-hui/</a></p><p>参考：<br><a href="https://zhuanlan.zhihu.com/p/377220948">https://zhuanlan.zhihu.com/p/377220948</a><br><a href="https://zhuanlan.zhihu.com/p/299819082">https://zhuanlan.zhihu.com/p/299819082</a><br><a href="https://wenku.baidu.com/view/a66fab43f12d2af90242e6da.html">https://wenku.baidu.com/view/a66fab43f12d2af90242e6da.html</a> （周志华 多实例学习）<br>##多任务学习<br>##Multi-task Learning</p><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://gitee.com/half-lang/img/raw/master/202303142005326.png">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">单任务学习vs多任务学习</div></center>在多任务学习中通过同一个模型可以完成多个维度的信息。###多任务学习的基本模型框架通常将多任务学习方法分为：**hard parameter sharing**和**soft parameter sharing**。区别在于上图中**MTL**模块<center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://gitee.com/half-lang/img/raw/master/202303142012729.png">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">硬共享与软共享</div></center>###hard parameter sharing：在硬共享中不论多少个任务，模型底层的参数是统一的，而顶层的参数独立。由于对于所有的任务，部分参数是共享的，硬共享的方式降低了模型过拟合的概率。同时，共享的参数越多过拟合的概率越小。###soft parameter sharing：软共享方式是现代研究中重点研究的方向。在软共享模型中，模型底层的部分参数共享，同时还有自己独特的参数，顶层参数独享。<center>     <img style="border-radius: 0.3125em;     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://gitee.com/half-lang/img/raw/master/202303142019726.png">     <br>     <div style="color:orange; border-bottom: 1px solid #d9d9d9;     display: inline-block;     color: #999;     padding: 2px;">谷歌MMOE模型</div> </center>在上述模型图中最左边模型属于硬共享，（b）与（c）都采用Expert0、Expert1、Expert3三个网络的参数求和后送入TowerA&amp;B，不同的是引入了Gate进行加权求和来表示不同任务的不同参数。<p>####多任务模型的share bottom<br>多任务学习的常规思路是共享底部的抽象表示层。<br>图像识别的底层特征往往代表一些像素纹理之类的抽象特征，而跟具体的任务不是特别相关，因此这种低冲突的表示层共享是比较容易出效果的，并且可以减少多任务的计算量（如上图a中所示）。</p><center>     <img style="border-radius: 0.3125em;     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://gitee.com/half-lang/img/raw/master/202303142033947.png">     <br>     <div style="color:orange; border-bottom: 1px solid #d9d9d9;     display: inline-block;     color: #999;     padding: 2px;">猫狗图像分类任务</div> </center>由于上述两个模型的底层网络十分相似，于是当两个任务使用相同的抽象表示层时，同时学好两个网络是可行的。但是对于相似度较差的任务，比如识别轮胎与猫，这种模型就较为困难了。**MMoE**模型引入了新的共享机制，即将模型的共享曾划分为多个**Expert**，并使用权重参数**gate**机制使得不同任务可以个性化的使用Expert。<center>     <img style="border-radius: 0.3125em;     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://gitee.com/half-lang/img/raw/master/202303142039485.png">     <br>     <div style="color:orange; border-bottom: 1px solid #d9d9d9;     display: inline-block;     color: #999;     padding: 2px;">Share Bottom to MoE</div> </center><p>参考资料：<br><a href="https://zhuanlan.zhihu.com/p/348873723">https://zhuanlan.zhihu.com/p/348873723</a><br><a href="https://www.jianshu.com/p/0f3e40bfd3ce">https://www.jianshu.com/p/0f3e40bfd3ce</a><br>##多标签学习（Multi-label Learning）<br>一般来说分类任务中每个对象只属于一个类别，类别之间是相互排斥的。但是在实际应用中，一个对象可能同时属于多个类别，比如一部电影可以同时是爱情片与战争片。<br><strong>多标签是一般分类问题的扩展</strong><br>###多标签分类方法<br>接下来，我将粗略的介绍现有的分类方法。主流文章将现有的多标签分类方法分为两大类：1)问题转换法 <strong>problem transformation</strong> 2) 适应法 <strong>algorithm adaptation</strong>。<br>问题转换法，顾名思义，就是将问题进行转换，它将多标签分类问题转化为多个简单的单标签分类问题。<br>适应法则是修改现有的单标签分类算法以适应解决多标签分类问题。比如修改后决策树 : 最后每一个叶子都将对应一个标签组合；修改SVM或者神经网络等，对每个标签得到的值进行排序，然后通过最小化ranking loss进行学习，等等。<br>参考资料：<br><a href="https://zhuanlan.zhihu.com/p/386597398">https://zhuanlan.zhihu.com/p/386597398</a></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="3-x2F-15日论文预读"><a href="#3-x2F-15日论文预读" class="headerlink" title="3/15日论文预读"></a>3/15日论文预读</h1><p>[toc]</p><h2 id="MIL"><a href="#MIL" class="headerlink" title="MIL"></a>MIL</h2><h2 id="多实例学习"><a href="#多实例学习" class="headerlink" title="多实例学习"></a>多实例学习</h2><h4 id="数据格式："><a href="#数据格式：" class="headerlink" title="数据格式："></a>数据格式：</h4><p>数据的基本单位是<strong>bag</strong>。数据的<strong>positive</strong>与<strong>negative</strong>定义如下：<br>一个bag中包含多个instance，如果<strong>所有</strong>的instance都被标记为negative，那么这个包就是negative，反之这个包为positive。<br><strong>公式表示如下：</strong><br><img src="https://gitee.com/half-lang/img/raw/master/202303141632218.png"></p><p>当一个<strong>bag</strong>中左右的例子都为负例时该包被称作负包，反之为正包</p><h4 id="问题应用场景："><a href="#问题应用场景：" class="headerlink" title="问题应用场景："></a>问题应用场景：</h4><p>多实例学习的应用与弱监督相似，具体为假设每一个<strong>bag</strong>为一组密码，对于一个<strong>任务task</strong>，有一个密码密码是能够解密的。那么训练的目的是为了分辨出哪组密码中含有可以解密的密码并指出哪条密码可以解密。<br>又比如某网站希望建立一组防火墙以屏蔽某些敏感词汇，但将所有敏感词汇标为负样本工作量过大，于是程序员使用孙笑川吧的发言作为负包（<strong>negative bag</strong>）在此假设孙吧属鼠的所有发言都是敏感词汇，同时使用语文课本上的句子（<strong>positive bag</strong>）作为正包进行训练。但值得注意的是课本上并不是所有的样本都是正样本，如鲁智深拳打镇关西中：鲁达：呸！俺只道那个郑大官人，却原来是杀猪的郑屠，这个<strong>腌臜泼才！</strong></p><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://gitee.com/half-lang/img/raw/master/202303141653078.png">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">鲁智深拳打镇关西</div></center><h4 id="问题求解方法"><a href="#问题求解方法" class="headerlink" title="问题求解方法"></a>问题求解方法</h4><p>假如我们已经知道所有的样本标注，这将转换为一个全监督问题。但实施情况是对于<strong>negative bag</strong> 显然所有的样本都是负样本，同时对于<strong>positive bag</strong> 我们不知道所有样本的标签。<br>解决这个问题的方法其实挺直接的：**迭代优化（alternative optimization)**。也就是说，我们先假设已经知道了所有样本的标记，那么就可以通过某种监督学习的方法得到一个分类模型，通过这个模型我们可以对每个训练样本进行预测，然后更新它们的标记，我们又可以拿这一次新得到的标记重新训练分类模型了。所以整个优化过程分为两部分：监督学习，标记更新。</p><p>多实例学习模型的基本流程：</p><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://gitee.com/half-lang/img/raw/master/202303141723131.png">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">多实例学习的流程</div></center>1.将实例转换为低维嵌入（特征提取）<p>2.通过置换不变聚合函数传递嵌入<br>3.预测包类别的概率</p><p>另一篇博客中也有多实例学习的描述：<br><a href="https://cqu-student.github.io/2022/12/15/2022-12-15-12-yue-17-ri-zu-hui/">https://cqu-student.github.io/2022/12/15/2022-12-15-12-yue-17-ri-zu-hui/</a></p><p>参考：<br><a href="https://zhuanlan.zhihu.com/p/377220948">https://zhuanlan.zhihu.com/p/377220948</a><br><a href="https://zhuanlan.zhihu.com/p/299819082">https://zhuanlan.zhihu.com/p/299819082</a><br><a href="https://wenku.baidu.com/view/a66fab43f12d2af90242e6da.html">https://wenku.baidu.com/view/a66fab43f12d2af90242e6da.html</a> （周志华 多实例学习）<br>##多任务学习<br>##Multi-task Learning</p><center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://gitee.com/half-lang/img/raw/master/202303142005326.png">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">单任务学习vs多任务学习</div></center>在多任务学习中通过同一个模型可以完成多个维度的信息。###多任务学习的基本模型框架通常将多任务学习方法分为：**hard parameter sharing**和**soft parameter sharing**。区别在于上图中**MTL**模块<center>    <img style="border-radius: 0.3125em;    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://gitee.com/half-lang/img/raw/master/202303142012729.png">    <br>    <div style="color:orange; border-bottom: 1px solid #d9d9d9;    display: inline-block;    color: #999;    padding: 2px;">硬共享与软共享</div></center><h3 id="hard-parameter-sharing："><a href="#hard-parameter-sharing：" class="headerlink" title="hard parameter sharing："></a>hard parameter sharing：</h3><p>在硬共享中不论多少个任务，模型底层的参数是统一的，而顶层的参数独立。由于对于所有的任务，部分参数是共享的，硬共享的方式降低了模型过拟合的概率。同时，共享的参数越多过拟合的概率越小。<br>###soft parameter sharing：<br>软共享方式是现代研究中重点研究的方向。<br>在软共享模型中，模型底层的部分参数共享，同时还有自己独特的参数，顶层参数独享。</p><center>     <img style="border-radius: 0.3125em;     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://gitee.com/half-lang/img/raw/master/202303142019726.png">     <br>     <div style="color:orange; border-bottom: 1px solid #d9d9d9;     display: inline-block;     color: #999;     padding: 2px;">谷歌MMOE模型</div> </center>在上述模型图中最左边模型属于硬共享，（b）与（c）都采用Expert0、Expert1、Expert3三个网络的参数求和后送入TowerA&amp;B，不同的是引入了Gate进行加权求和来表示不同任务的不同参数。<h4 id="多任务模型的share-bottom"><a href="#多任务模型的share-bottom" class="headerlink" title="多任务模型的share bottom"></a>多任务模型的share bottom</h4><p>多任务学习的常规思路是共享底部的抽象表示层。<br>图像识别的底层特征往往代表一些像素纹理之类的抽象特征，而跟具体的任务不是特别相关，因此这种低冲突的表示层共享是比较容易出效果的，并且可以减少多任务的计算量（如上图a中所示）。</p><center>     <img style="border-radius: 0.3125em;     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://gitee.com/half-lang/img/raw/master/202303142033947.png">     <br>     <div style="color:orange; border-bottom: 1px solid #d9d9d9;     display: inline-block;     color: #999;     padding: 2px;">猫狗图像分类任务</div> </center>由于上述两个模型的底层网络十分相似，于是当两个任务使用相同的抽象表示层时，同时学好两个网络是可行的。但是对于相似度较差的任务，比如识别轮胎与猫，这种模型就较为困难了。**MMoE**模型引入了新的共享机制，即将模型的共享曾划分为多个**Expert**，并使用权重参数**gate**机制使得不同任务可以个性化的使用Expert。<center>     <img style="border-radius: 0.3125em;     box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" src="https://gitee.com/half-lang/img/raw/master/202303142039485.png">     <br>     <div style="color:orange; border-bottom: 1px solid #d9d9d9;     display: inline-block;     color: #999;     padding: 2px;">Share Bottom to MoE</div> </center><p>参考资料：<br><a href="https://zhuanlan.zhihu.com/p/348873723">https://zhuanlan.zhihu.com/p/348873723</a><br><a href="https://www.jianshu.com/p/0f3e40bfd3ce">https://www.jianshu.com/p/0f3e40bfd3ce</a><br>##多标签学习（Multi-label Learning）<br>一般来说分类任务中每个对象只属于一个类别，类别之间是相互排斥的。但是在实际应用中，一个对象可能同时属于多个类别，比如一部电影可以同时是爱情片与战争片。<br><strong>多标签是一般分类问题的扩展</strong></p><h3 id="多标签分类方法"><a href="#多标签分类方法" class="headerlink" title="多标签分类方法"></a>多标签分类方法</h3><p>接下来，我将粗略的介绍现有的分类方法。主流文章将现有的多标签分类方法分为两大类：1)问题转换法 <strong>problem transformation</strong> 2) 适应法 <strong>algorithm adaptation</strong>。<br>问题转换法，顾名思义，就是将问题进行转换，它将多标签分类问题转化为多个简单的单标签分类问题。<br>适应法则是修改现有的单标签分类算法以适应解决多标签分类问题。比如修改后决策树 : 最后每一个叶子都将对应一个标签组合；修改SVM或者神经网络等，对每个标签得到的值进行排序，然后通过最小化ranking loss进行学习，等等。<br>参考资料：<br><a href="https://zhuanlan.zhihu.com/p/386597398">https://zhuanlan.zhihu.com/p/386597398</a></p>]]></content>
       
       
       <categories>
@@ -22,11 +22,11 @@
             
             <tag> 论文理论预读 </tag>
             
-            <tag> 矮半截 </tag>
-            
             <tag> 多实例学习 </tag>
             
             <tag> 多任务学习 </tag>
+            
+            <tag> 矮半截 </tag>
             
             <tag> 3月15日组会 </tag>
             
@@ -68,9 +68,9 @@
             
             <tag> 论文理论预读 </tag>
             
-            <tag> 长尾问题 </tag>
-            
             <tag> 矮半截 </tag>
+            
+            <tag> 长尾问题 </tag>
             
         </tags>
       
@@ -97,9 +97,9 @@
             
             <tag> 论文理论预读 </tag>
             
-            <tag> 矮半截 </tag>
-            
             <tag> 12月31日组会 </tag>
+            
+            <tag> 矮半截 </tag>
             
             <tag> crf </tag>
             
@@ -128,11 +128,11 @@
             
             <tag> 论文理论预读 </tag>
             
-            <tag> 矮半截 </tag>
-            
             <tag> 语义分割 </tag>
             
             <tag> 12月31日组会 </tag>
+            
+            <tag> 矮半截 </tag>
             
         </tags>
       
@@ -199,6 +199,39 @@
     
     
     <entry>
+      <title>12月31日组会</title>
+      <link href="/2022/12/15/2022-12-31-12-yue-31-ri-zu-hui/"/>
+      <url>/2022/12/15/2022-12-31-12-yue-31-ri-zu-hui/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Dynamic-Prototype-Convolution-Network-for-Few-Shot-Semantic-Segmentation"><a href="#Dynamic-Prototype-Convolution-Network-for-Few-Shot-Semantic-Segmentation" class="headerlink" title="Dynamic Prototype Convolution Network for Few-Shot Semantic Segmentation"></a>Dynamic Prototype Convolution Network for Few-Shot Semantic Segmentation</h1><h2 id="meta-learning-strategy"><a href="#meta-learning-strategy" class="headerlink" title="meta-learning strategy"></a>meta-learning strategy</h2><p>&amp;ensp;元学习Meta Learning，含义为学会学习，即learn to learn，就是带着这种对人类这种“学习能力”的期望诞生的。Meta Learning希望使得模型获取一种“学会学习”的能力，使其可以在获取已有“知识”的基础上快速学习新的任务，</p><div align="center"><img src="https://cdn.jsdelivr.net/gh/cqu-student/Img/v2-23b952fb974edeffa4e28d0065440227_720w.webp"></div><p>&amp;ensp;在机器学习中，训练单位是一条数据，通过数据来对模型进行优化；数据可以分为训练集、测试集和验证集。在元学习中，训练单位分层级了，第一层训练单位是任务，也就是说，元学习中要准备许多任务来进行学习，第二层训练单位才是每个任务对应的数据。</p><p>&amp;ensp;二者的目的都是找一个Function，只是两个Function的功能不同，要做的事情不一样。机器学习中的Function直接作用于特征和标签，去寻找特征与标签之间的关联；而元学习中的Function是用于寻找新的f，新的f才会应用于具体的任务。</p><p>[1] (<a href="https://zhuanlan.zhihu.com/p/136975128">https://zhuanlan.zhihu.com/p/136975128</a>)</p><h2 id="FSS"><a href="#FSS" class="headerlink" title="FSS"></a>FSS</h2><p>任务: 以one-shot为例，在support set 中，给定新类（比如狗）的一张图片（或多张图片，比如few-shot，就是多张）以及对应的分割mask（label），这里需要注意，这里的新类（狗）并没有出现在训练任务中。然后在quiery set 给定一张含新类（狗）的图片，需要准确地对这张图片进行分割。这个问题简单说就是：给你一张有mask的图片，比如图片中这是一只狗，然后给你其他新的图片，你还能知道哪个是狗并分割出来，这如何做到的呢？</p><p>训练: 训练的时候，模型已经学会了如何做分割的方式（可认为是先验知识或经验），当你做测试时候，只需要按学会的方式去分割就可以了（举一反三）。这跟迁移学习的区别在于：迁移学习需要在大量数据中先训练一个模型，做新任务时去Fine-tune就行，所以训练数据和测试数据需要相近。主要区别就是，当碰到新类别/没见过数据，前者直接按照训练学会的经验就能完成，后者要么去Fine-tune或重新训练。而Meta Learning 则可以很好的利用以往的知识，能根据新任务的调整自己。</p><div align="center"><img src="https://cdn.jsdelivr.net/gh/cqu-student/Img/20200731094509383.png"></div><p>[2] (<a href="https://blog.csdn.net/weixin_43673376/article/details/107705700">https://blog.csdn.net/weixin_43673376/article/details/107705700</a>)</p><h2 id="asymmetric-kernels"><a href="#asymmetric-kernels" class="headerlink" title="asymmetric kernels"></a>asymmetric kernels</h2><p>&amp;ensp;非对称卷积通常用于逼近现有的正方形卷积以进行模型压缩和加速，先前的一些工作表明，可以将标准的d×d卷积分解为1×d和d×1卷积，以减少参数量。其背后的理论相当简单：如果二维卷积核的秩为1，则运算可等价地转换为一系列一维卷积。然而，由于深度网络中下学习到的核具有分布特征值，其内在秩比实际中的高，因此直接将变换应用于核会导致显著的信息损失。</p><p>[3] (<a href="https://zhuanlan.zhihu.com/p/371099423#:~:text=%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8D%B7%E7%A7%AF%E9%80%9A%E5%B8%B8%E7%94%A8%E4%BA%8E%E9%80%BC%E8%BF%91%E7%8E%B0%E6%9C%89%E7%9A%84%E6%AD%A3%E6%96%B9%E5%BD%A2%E5%8D%B7%E7%A7%AF%E4%BB%A5%E8%BF%9B%E8%A1%8C%E6%A8%A1%E5%9E%8B%E5%8E%8B%E7%BC%A9%E5%92%8C%E5%8A%A0%E9%80%9F%EF%BC%8C%E5%85%88%E5%89%8D%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B7%A5%E4%BD%9C%E8%A1%A8%E6%98%8E%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%B0%86%E6%A0%87%E5%87%86%E7%9A%84%20dtimes%20d%20%E5%8D%B7%E7%A7%AF%E5%88%86%E8%A7%A3%E4%B8%BA%201times,d%20%E5%92%8C%20dtimes%201%20%E5%8D%B7%E7%A7%AF%EF%BC%8C%E4%BB%A5%E5%87%8F%E5%B0%91%E5%8F%82%E6%95%B0%E9%87%8F%E3%80%82%20%E5%85%B6%E8%83%8C%E5%90%8E%E7%9A%84%E7%90%86%E8%AE%BA%E7%9B%B8%E5%BD%93%E7%AE%80%E5%8D%95%EF%BC%9A%E5%A6%82%E6%9E%9C%E4%BA%8C%E7%BB%B4%E5%8D%B7%E7%A7%AF%E6%A0%B8%E7%9A%84%E7%A7%A9%E4%B8%BA1%EF%BC%8C%E5%88%99%E8%BF%90%E7%AE%97%E5%8F%AF%E7%AD%89%E4%BB%B7%E5%9C%B0%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%B8%80%E7%B3%BB%E5%88%97%E4%B8%80%E7%BB%B4%E5%8D%B7%E7%A7%AF%E3%80%82">https://zhuanlan.zhihu.com/p/371099423#:~:text=%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8D%B7%E7%A7%AF%E9%80%9A%E5%B8%B8%E7%94%A8%E4%BA%8E%E9%80%BC%E8%BF%91%E7%8E%B0%E6%9C%89%E7%9A%84%E6%AD%A3%E6%96%B9%E5%BD%A2%E5%8D%B7%E7%A7%AF%E4%BB%A5%E8%BF%9B%E8%A1%8C%E6%A8%A1%E5%9E%8B%E5%8E%8B%E7%BC%A9%E5%92%8C%E5%8A%A0%E9%80%9F%EF%BC%8C%E5%85%88%E5%89%8D%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B7%A5%E4%BD%9C%E8%A1%A8%E6%98%8E%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%B0%86%E6%A0%87%E5%87%86%E7%9A%84%20dtimes%20d%20%E5%8D%B7%E7%A7%AF%E5%88%86%E8%A7%A3%E4%B8%BA%201times,d%20%E5%92%8C%20dtimes%201%20%E5%8D%B7%E7%A7%AF%EF%BC%8C%E4%BB%A5%E5%87%8F%E5%B0%91%E5%8F%82%E6%95%B0%E9%87%8F%E3%80%82%20%E5%85%B6%E8%83%8C%E5%90%8E%E7%9A%84%E7%90%86%E8%AE%BA%E7%9B%B8%E5%BD%93%E7%AE%80%E5%8D%95%EF%BC%9A%E5%A6%82%E6%9E%9C%E4%BA%8C%E7%BB%B4%E5%8D%B7%E7%A7%AF%E6%A0%B8%E7%9A%84%E7%A7%A9%E4%B8%BA1%EF%BC%8C%E5%88%99%E8%BF%90%E7%AE%97%E5%8F%AF%E7%AD%89%E4%BB%B7%E5%9C%B0%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%B8%80%E7%B3%BB%E5%88%97%E4%B8%80%E7%BB%B4%E5%8D%B7%E7%A7%AF%E3%80%82</a>)</p><h1 id="MAXIM-Multi-Axis-MLP-for-Image-Processing"><a href="#MAXIM-Multi-Axis-MLP-for-Image-Processing" class="headerlink" title="MAXIM: Multi-Axis MLP for Image Processing"></a>MAXIM: Multi-Axis MLP for Image Processing</h1><h2 id="patch-boundary-artifacts"><a href="#patch-boundary-artifacts" class="headerlink" title="patch boundary artifacts"></a>patch boundary artifacts</h2><p>&amp;ensp;振铃效果是由锐利边缘产生的，如果以常数填补边界，则边界处会出现明显的“断层”，即锐利的边缘。</p><div align="center"><img src="https://cdn.jsdelivr.net/gh/cqu-student/Img/2020021318233097.png"></div><h2 id="low-level-vision"><a href="#low-level-vision" class="headerlink" title="low-level vision"></a>low-level vision</h2><p>&amp;ensp;Low-level feature:通常是指图像中的一些小的细节信息，例如边缘(edge)，角(corner),颜色(color),像素(pixeles),梯度(gradients)等，这些信息可以通过滤波器、SIFT或HOG获取。</p><p>&amp;ensp;除了High-level Vision任务外，很少有研究将transformer应用于low-level vision领域，例如图像超分辨率，图像生成等。与以标签或框为输出的分类，分割和检测相比，low-level vision任务 通常将图像作为输出（例如，高分辨率图像或去噪图像），这更具有挑战性。</p><p>[4] (<a href="https://www.ebaina.com/articles/140000012535#:~:text=%E4%BD%8E%E7%BA%A7%E8%A7%86%E8%A7%89%EF%BC%9A%E4%B8%BB%E8%A6%81%E5%85%B3%E6%B3%A8%E7%9A%84%E6%98%AF%E4%BB%8E%E8%A7%86%E7%BD%91%E8%86%9C%E5%9B%BE%E5%83%8F%E4%B8%AD%E6%8F%90%E5%8F%96%E5%9B%BE%E5%83%8F%E7%9A%84%E7%89%B9%E6%80%A7%E3%80%82%20middle-level%20vision%20middle-level%20vision%3A%20which%20concerns,the%20integration%20of%20image%20properties%20into%20perceptual%20organizations">https://www.ebaina.com/articles/140000012535#:~:text=%E4%BD%8E%E7%BA%A7%E8%A7%86%E8%A7%89%EF%BC%9A%E4%B8%BB%E8%A6%81%E5%85%B3%E6%B3%A8%E7%9A%84%E6%98%AF%E4%BB%8E%E8%A7%86%E7%BD%91%E8%86%9C%E5%9B%BE%E5%83%8F%E4%B8%AD%E6%8F%90%E5%8F%96%E5%9B%BE%E5%83%8F%E7%9A%84%E7%89%B9%E6%80%A7%E3%80%82%20middle-level%20vision%20middle-level%20vision%3A%20which%20concerns,the%20integration%20of%20image%20properties%20into%20perceptual%20organizations</a>.)</p><h1 id="Structure-Boundary-Preserving-Segmentation-for-Medical-Image-with-Ambiguous-Boundary"><a href="#Structure-Boundary-Preserving-Segmentation-for-Medical-Image-with-Ambiguous-Boundary" class="headerlink" title="Structure Boundary Preserving Segmentation for Medical Image with Ambiguous Boundary"></a>Structure Boundary Preserving Segmentation for Medical Image with Ambiguous Boundary</h1><h2 id="automatic-medical-segmentation-自动医疗图像分割"><a href="#automatic-medical-segmentation-自动医疗图像分割" class="headerlink" title="automatic medical segmentation(自动医疗图像分割)"></a>automatic medical segmentation(自动医疗图像分割)</h2><p>&amp;ensp;医学图像分割的目的是使图像中解剖或病理结构的变化更加清晰;目前流行的医学图像分割任务包括肝脏和肝脏肿瘤分割，脑和脑肿瘤分割，视盘分割，细胞分割，肺分割和肺结节等。为了帮助临床医生做出准确的诊断，有必要对医学图像中的一些关键目标进行分割，并从分割区域中提取特征。但是该领域的难点为$医学图像的特征提取比普通RGB图像更难，往往存在模糊、噪声、对比度低等问题$</p><p>&amp;ensp; 与与普通的图像分割不同，医学图像通常含有噪声且边界模糊。因此，仅仅依靠图像的底层特征很难对医学图像中的目标进行检测和识别。同时，由于缺乏图像细节信息，仅靠图像语义特征无法获得准确的边界。而U-Net通过跳跃连接，将低分辨率和高分辨率的特征图结合起来，有效地融合了低分辨率和高分辨率的图像特征，是医学图像分割任务的完美解决方案。目前，U-Net已经成为大多数医学图像分割任务的基准，并激发了许多有意义的改进。</p><div align="center"><img src="https://cdn.jsdelivr.net/gh/cqu-student/Img/20210331175558832.png"></div><h2 id="Interactive-Segmentation"><a href="#Interactive-Segmentation" class="headerlink" title="Interactive Segmentation"></a>Interactive Segmentation</h2><p>&amp;ensp;有效的交互分割的关键是，临床医生可以使用交互方法，如鼠标点击和轮廓框，以而改善从模型输出的初始分割结果。然后，该模型可以更新参数并生成新的分割图像，再获得临床医生的新的反馈。</p><p>[5] (<a href="https://blog.csdn.net/qq_38932073/article/details/115354406">https://blog.csdn.net/qq_38932073/article/details/115354406</a>)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 论文理论预读 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 论文理论预读 </tag>
+            
+            <tag> 语义分割 </tag>
+            
+            <tag> 小样本语义分割 </tag>
+            
+            <tag> 高一头 </tag>
+            
+            <tag> 12月31日组会 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>12月17日组会</title>
       <link href="/2022/12/15/2022-12-15-12-yue-17-ri-zu-hui/"/>
       <url>/2022/12/15/2022-12-15-12-yue-17-ri-zu-hui/</url>
@@ -224,39 +257,6 @@
     
     
     <entry>
-      <title>12月31日组会</title>
-      <link href="/2022/12/15/2022-12-31-12-yue-31-ri-zu-hui/"/>
-      <url>/2022/12/15/2022-12-31-12-yue-31-ri-zu-hui/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Dynamic-Prototype-Convolution-Network-for-Few-Shot-Semantic-Segmentation"><a href="#Dynamic-Prototype-Convolution-Network-for-Few-Shot-Semantic-Segmentation" class="headerlink" title="Dynamic Prototype Convolution Network for Few-Shot Semantic Segmentation"></a>Dynamic Prototype Convolution Network for Few-Shot Semantic Segmentation</h1><h2 id="meta-learning-strategy"><a href="#meta-learning-strategy" class="headerlink" title="meta-learning strategy"></a>meta-learning strategy</h2><p>&amp;ensp;元学习Meta Learning，含义为学会学习，即learn to learn，就是带着这种对人类这种“学习能力”的期望诞生的。Meta Learning希望使得模型获取一种“学会学习”的能力，使其可以在获取已有“知识”的基础上快速学习新的任务，</p><div align="center"><img src="https://cdn.jsdelivr.net/gh/cqu-student/Img/v2-23b952fb974edeffa4e28d0065440227_720w.webp"></div><p>&amp;ensp;在机器学习中，训练单位是一条数据，通过数据来对模型进行优化；数据可以分为训练集、测试集和验证集。在元学习中，训练单位分层级了，第一层训练单位是任务，也就是说，元学习中要准备许多任务来进行学习，第二层训练单位才是每个任务对应的数据。</p><p>&amp;ensp;二者的目的都是找一个Function，只是两个Function的功能不同，要做的事情不一样。机器学习中的Function直接作用于特征和标签，去寻找特征与标签之间的关联；而元学习中的Function是用于寻找新的f，新的f才会应用于具体的任务。</p><p>[1] (<a href="https://zhuanlan.zhihu.com/p/136975128">https://zhuanlan.zhihu.com/p/136975128</a>)</p><h2 id="FSS"><a href="#FSS" class="headerlink" title="FSS"></a>FSS</h2><p>任务: 以one-shot为例，在support set 中，给定新类（比如狗）的一张图片（或多张图片，比如few-shot，就是多张）以及对应的分割mask（label），这里需要注意，这里的新类（狗）并没有出现在训练任务中。然后在quiery set 给定一张含新类（狗）的图片，需要准确地对这张图片进行分割。这个问题简单说就是：给你一张有mask的图片，比如图片中这是一只狗，然后给你其他新的图片，你还能知道哪个是狗并分割出来，这如何做到的呢？</p><p>训练: 训练的时候，模型已经学会了如何做分割的方式（可认为是先验知识或经验），当你做测试时候，只需要按学会的方式去分割就可以了（举一反三）。这跟迁移学习的区别在于：迁移学习需要在大量数据中先训练一个模型，做新任务时去Fine-tune就行，所以训练数据和测试数据需要相近。主要区别就是，当碰到新类别/没见过数据，前者直接按照训练学会的经验就能完成，后者要么去Fine-tune或重新训练。而Meta Learning 则可以很好的利用以往的知识，能根据新任务的调整自己。</p><div align="center"><img src="https://cdn.jsdelivr.net/gh/cqu-student/Img/20200731094509383.png"></div><p>[2] (<a href="https://blog.csdn.net/weixin_43673376/article/details/107705700">https://blog.csdn.net/weixin_43673376/article/details/107705700</a>)</p><h2 id="asymmetric-kernels"><a href="#asymmetric-kernels" class="headerlink" title="asymmetric kernels"></a>asymmetric kernels</h2><p>&amp;ensp;非对称卷积通常用于逼近现有的正方形卷积以进行模型压缩和加速，先前的一些工作表明，可以将标准的d×d卷积分解为1×d和d×1卷积，以减少参数量。其背后的理论相当简单：如果二维卷积核的秩为1，则运算可等价地转换为一系列一维卷积。然而，由于深度网络中下学习到的核具有分布特征值，其内在秩比实际中的高，因此直接将变换应用于核会导致显著的信息损失。</p><p>[3] (<a href="https://zhuanlan.zhihu.com/p/371099423#:~:text=%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8D%B7%E7%A7%AF%E9%80%9A%E5%B8%B8%E7%94%A8%E4%BA%8E%E9%80%BC%E8%BF%91%E7%8E%B0%E6%9C%89%E7%9A%84%E6%AD%A3%E6%96%B9%E5%BD%A2%E5%8D%B7%E7%A7%AF%E4%BB%A5%E8%BF%9B%E8%A1%8C%E6%A8%A1%E5%9E%8B%E5%8E%8B%E7%BC%A9%E5%92%8C%E5%8A%A0%E9%80%9F%EF%BC%8C%E5%85%88%E5%89%8D%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B7%A5%E4%BD%9C%E8%A1%A8%E6%98%8E%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%B0%86%E6%A0%87%E5%87%86%E7%9A%84%20dtimes%20d%20%E5%8D%B7%E7%A7%AF%E5%88%86%E8%A7%A3%E4%B8%BA%201times,d%20%E5%92%8C%20dtimes%201%20%E5%8D%B7%E7%A7%AF%EF%BC%8C%E4%BB%A5%E5%87%8F%E5%B0%91%E5%8F%82%E6%95%B0%E9%87%8F%E3%80%82%20%E5%85%B6%E8%83%8C%E5%90%8E%E7%9A%84%E7%90%86%E8%AE%BA%E7%9B%B8%E5%BD%93%E7%AE%80%E5%8D%95%EF%BC%9A%E5%A6%82%E6%9E%9C%E4%BA%8C%E7%BB%B4%E5%8D%B7%E7%A7%AF%E6%A0%B8%E7%9A%84%E7%A7%A9%E4%B8%BA1%EF%BC%8C%E5%88%99%E8%BF%90%E7%AE%97%E5%8F%AF%E7%AD%89%E4%BB%B7%E5%9C%B0%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%B8%80%E7%B3%BB%E5%88%97%E4%B8%80%E7%BB%B4%E5%8D%B7%E7%A7%AF%E3%80%82">https://zhuanlan.zhihu.com/p/371099423#:~:text=%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8D%B7%E7%A7%AF%E9%80%9A%E5%B8%B8%E7%94%A8%E4%BA%8E%E9%80%BC%E8%BF%91%E7%8E%B0%E6%9C%89%E7%9A%84%E6%AD%A3%E6%96%B9%E5%BD%A2%E5%8D%B7%E7%A7%AF%E4%BB%A5%E8%BF%9B%E8%A1%8C%E6%A8%A1%E5%9E%8B%E5%8E%8B%E7%BC%A9%E5%92%8C%E5%8A%A0%E9%80%9F%EF%BC%8C%E5%85%88%E5%89%8D%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B7%A5%E4%BD%9C%E8%A1%A8%E6%98%8E%EF%BC%8C%E5%8F%AF%E4%BB%A5%E5%B0%86%E6%A0%87%E5%87%86%E7%9A%84%20dtimes%20d%20%E5%8D%B7%E7%A7%AF%E5%88%86%E8%A7%A3%E4%B8%BA%201times,d%20%E5%92%8C%20dtimes%201%20%E5%8D%B7%E7%A7%AF%EF%BC%8C%E4%BB%A5%E5%87%8F%E5%B0%91%E5%8F%82%E6%95%B0%E9%87%8F%E3%80%82%20%E5%85%B6%E8%83%8C%E5%90%8E%E7%9A%84%E7%90%86%E8%AE%BA%E7%9B%B8%E5%BD%93%E7%AE%80%E5%8D%95%EF%BC%9A%E5%A6%82%E6%9E%9C%E4%BA%8C%E7%BB%B4%E5%8D%B7%E7%A7%AF%E6%A0%B8%E7%9A%84%E7%A7%A9%E4%B8%BA1%EF%BC%8C%E5%88%99%E8%BF%90%E7%AE%97%E5%8F%AF%E7%AD%89%E4%BB%B7%E5%9C%B0%E8%BD%AC%E6%8D%A2%E4%B8%BA%E4%B8%80%E7%B3%BB%E5%88%97%E4%B8%80%E7%BB%B4%E5%8D%B7%E7%A7%AF%E3%80%82</a>)</p><h1 id="MAXIM-Multi-Axis-MLP-for-Image-Processing"><a href="#MAXIM-Multi-Axis-MLP-for-Image-Processing" class="headerlink" title="MAXIM: Multi-Axis MLP for Image Processing"></a>MAXIM: Multi-Axis MLP for Image Processing</h1><h2 id="patch-boundary-artifacts"><a href="#patch-boundary-artifacts" class="headerlink" title="patch boundary artifacts"></a>patch boundary artifacts</h2><p>&amp;ensp;振铃效果是由锐利边缘产生的，如果以常数填补边界，则边界处会出现明显的“断层”，即锐利的边缘。</p><div align="center"><img src="https://cdn.jsdelivr.net/gh/cqu-student/Img/2020021318233097.png"></div><h2 id="low-level-vision"><a href="#low-level-vision" class="headerlink" title="low-level vision"></a>low-level vision</h2><p>&amp;ensp;Low-level feature:通常是指图像中的一些小的细节信息，例如边缘(edge)，角(corner),颜色(color),像素(pixeles),梯度(gradients)等，这些信息可以通过滤波器、SIFT或HOG获取。</p><p>&amp;ensp;除了High-level Vision任务外，很少有研究将transformer应用于low-level vision领域，例如图像超分辨率，图像生成等。与以标签或框为输出的分类，分割和检测相比，low-level vision任务 通常将图像作为输出（例如，高分辨率图像或去噪图像），这更具有挑战性。</p><p>[4] (<a href="https://www.ebaina.com/articles/140000012535#:~:text=%E4%BD%8E%E7%BA%A7%E8%A7%86%E8%A7%89%EF%BC%9A%E4%B8%BB%E8%A6%81%E5%85%B3%E6%B3%A8%E7%9A%84%E6%98%AF%E4%BB%8E%E8%A7%86%E7%BD%91%E8%86%9C%E5%9B%BE%E5%83%8F%E4%B8%AD%E6%8F%90%E5%8F%96%E5%9B%BE%E5%83%8F%E7%9A%84%E7%89%B9%E6%80%A7%E3%80%82%20middle-level%20vision%20middle-level%20vision%3A%20which%20concerns,the%20integration%20of%20image%20properties%20into%20perceptual%20organizations">https://www.ebaina.com/articles/140000012535#:~:text=%E4%BD%8E%E7%BA%A7%E8%A7%86%E8%A7%89%EF%BC%9A%E4%B8%BB%E8%A6%81%E5%85%B3%E6%B3%A8%E7%9A%84%E6%98%AF%E4%BB%8E%E8%A7%86%E7%BD%91%E8%86%9C%E5%9B%BE%E5%83%8F%E4%B8%AD%E6%8F%90%E5%8F%96%E5%9B%BE%E5%83%8F%E7%9A%84%E7%89%B9%E6%80%A7%E3%80%82%20middle-level%20vision%20middle-level%20vision%3A%20which%20concerns,the%20integration%20of%20image%20properties%20into%20perceptual%20organizations</a>.)</p><h1 id="Structure-Boundary-Preserving-Segmentation-for-Medical-Image-with-Ambiguous-Boundary"><a href="#Structure-Boundary-Preserving-Segmentation-for-Medical-Image-with-Ambiguous-Boundary" class="headerlink" title="Structure Boundary Preserving Segmentation for Medical Image with Ambiguous Boundary"></a>Structure Boundary Preserving Segmentation for Medical Image with Ambiguous Boundary</h1><h2 id="automatic-medical-segmentation-自动医疗图像分割"><a href="#automatic-medical-segmentation-自动医疗图像分割" class="headerlink" title="automatic medical segmentation(自动医疗图像分割)"></a>automatic medical segmentation(自动医疗图像分割)</h2><p>&amp;ensp;医学图像分割的目的是使图像中解剖或病理结构的变化更加清晰;目前流行的医学图像分割任务包括肝脏和肝脏肿瘤分割，脑和脑肿瘤分割，视盘分割，细胞分割，肺分割和肺结节等。为了帮助临床医生做出准确的诊断，有必要对医学图像中的一些关键目标进行分割，并从分割区域中提取特征。但是该领域的难点为$医学图像的特征提取比普通RGB图像更难，往往存在模糊、噪声、对比度低等问题$</p><p>&amp;ensp; 与与普通的图像分割不同，医学图像通常含有噪声且边界模糊。因此，仅仅依靠图像的底层特征很难对医学图像中的目标进行检测和识别。同时，由于缺乏图像细节信息，仅靠图像语义特征无法获得准确的边界。而U-Net通过跳跃连接，将低分辨率和高分辨率的特征图结合起来，有效地融合了低分辨率和高分辨率的图像特征，是医学图像分割任务的完美解决方案。目前，U-Net已经成为大多数医学图像分割任务的基准，并激发了许多有意义的改进。</p><div align="center"><img src="https://cdn.jsdelivr.net/gh/cqu-student/Img/20210331175558832.png"></div><h2 id="Interactive-Segmentation"><a href="#Interactive-Segmentation" class="headerlink" title="Interactive Segmentation"></a>Interactive Segmentation</h2><p>&amp;ensp;有效的交互分割的关键是，临床医生可以使用交互方法，如鼠标点击和轮廓框，以而改善从模型输出的初始分割结果。然后，该模型可以更新参数并生成新的分割图像，再获得临床医生的新的反馈。</p><p>[5] (<a href="https://blog.csdn.net/qq_38932073/article/details/115354406">https://blog.csdn.net/qq_38932073/article/details/115354406</a>)</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 论文理论预读 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 论文理论预读 </tag>
-            
-            <tag> 高一头 </tag>
-            
-            <tag> 语义分割 </tag>
-            
-            <tag> 小样本语义分割 </tag>
-            
-            <tag> 12月31日组会 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>12月1日组会</title>
       <link href="/2022/12/04/2022-12-4-12-yue-1-ri-zu-hui/"/>
       <url>/2022/12/04/2022-12-4-12-yue-1-ri-zu-hui/</url>
@@ -273,13 +273,13 @@
       
         <tags>
             
+            <tag> 高一头 </tag>
+            
             <tag> 论文预读 </tag>
             
             <tag> 目标检测 </tag>
             
             <tag> 行人重识别 </tag>
-            
-            <tag> 高一头 </tag>
             
         </tags>
       
