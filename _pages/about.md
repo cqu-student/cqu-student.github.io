@@ -26,22 +26,20 @@ My research interest includes neural machine translation and computer vision. I 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Neurlps2025</div><img src='images/Neurlps2025.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Knowledge-based Visual Question Answer with Multimodal Processing, Retrieval and Filtering]([https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf](https://arxiv.org/abs/2510.14605))
+[Knowledge-based Visual Question Answer with Multimodal Processing, Retrieval and Filtering]([https://arxiv.org/pdf/2510.14605](https://arxiv.org/abs/2510.14605))
 
 **Yuyang Hong^{*}**, Jiaqi Gu^{*},  Qi Yang, Lubin Fan^{+}, Yue Wu, Ying Wang, Kun Ding^{+}, Shiming Xiang, Jieping Ye
 
-[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=EA-8C9IAAAAJ&citation_for_view=EA-8C9IAAAAJ:u-x6o8ySG0sC) <strong><span class='show_paper_citations' data='EA-8C9IAAAAJ:u-x6o8ySG0sC'></span></strong>
 </div>
 </div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">arxiv2025</div><img src='guanggao%20(1).pdf' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Knowledge-based Visual Question Answer with Multimodal Processing, Retrieval and Filtering]([https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf](https://arxiv.org/abs/2510.14605))
+[Taming Modality Entanglement in Continual Audio-Visual Segmentation]([https://arxiv.org/pdf/2510.17234](https://arxiv.org/abs/2510.14605))
 
-**Yuyang Hong^{*}**, Jiaqi Gu^{*},  Qi Yang, Lubin Fan^{+}, Yue Wu, Ying Wang, Kun Ding^{+}, Shiming Xiang, Jieping Ye
+**Yuyang Hong^{*}**, Qi Yang, Tao Zhang, Zili Wang, Zhaojin Fu, Kun Ding, Bin Fan, Shiming Xiang
 
-[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=EA-8C9IAAAAJ&citation_for_view=EA-8C9IAAAAJ:u-x6o8ySG0sC) <strong><span class='show_paper_citations' data='EA-8C9IAAAAJ:u-x6o8ySG0sC'></span></strong>
 </div>
 </div
 
