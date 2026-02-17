@@ -30,7 +30,7 @@ My research interests include neural machine translation and computer vision. I 
 <div class='paper-box-text' markdown="1">
 
 **Knowledge-based Visual Question Answering with Multimodal Processing, Retrieval and Filtering**  
-[📄 Paper](https://arxiv.org/abs/2510.14605) | [💻 GitHub](https://github.com/yourusername/project) | [🤗 HuggingFace](https://huggingface.co/yourusername/project)
+[📄 Paper](https://arxiv.org/abs/2510.14605) | [💻 GitHub](https://github.com/cqu-student/Wiki-PRF) | [🤗 HuggingFace](https://huggingface.co/hongyuyang23casia/Wiki-PRF-7B-Infoseek)
 
 **Yuyang Hong**<sup>*</sup>, Jiaqi Gu<sup>*</sup>, Qi Yang, Lubin Fan<sup>†</sup>, Yue Wu, Ying Wang, Kun Ding<sup>†</sup>, Shiming Xiang, Jieping Ye
 
@@ -44,7 +44,7 @@ My research interests include neural machine translation and computer vision. I 
 <div class='paper-box-text' markdown="1">
 
 **Taming Modality Entanglement in Continual Audio-Visual Segmentation**  
-[📄 Paper](https://arxiv.org/abs/2510.17234) | [💻 GitHub](https://github.com/yourusername/CMR) | [🤗 HuggingFace](https://huggingface.co/yourusername/CMR)
+[📄 Paper](https://arxiv.org/abs/2510.17234) | [💻 GitHub]() | [🤗 HuggingFace]()
 
 **Yuyang Hong**<sup>*</sup>, Qi Yang, Tao Zhang, Zili Wang, Zhaojin Fu, Kun Ding, Bin Fan, Shiming Xiang
 
