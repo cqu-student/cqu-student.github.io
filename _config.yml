@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Hong Yuyang's Homepage"
-description              : "PhD Student at CASIA, focusing on LLM and RAG "
+description              : "Focusing on VLM and RAG"
 repository               : "cqu-student/cqu-student.github.io"
 google_scholar_stats_use_cdn : true
 
