@@ -14,6 +14,11 @@ redirect_from:
 {% assign gsDataBaseUrl = "https://raw.githubusercontent.com/" | append: site.repository | append: "/" %}
 {% endif %}
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
+<!-- ========== 横渠四句格言 ========== -->
+<div class="motto-banner" markdown="1">
+  <span class="motto-text">为天地立心，为生民立命，为往圣继绝学，为万世开太平</span>
+  <span class="motto-author">— 张载《横渠四句》</span>
+</div>
 
 <span class='anchor' id='about-me'></span>
 
