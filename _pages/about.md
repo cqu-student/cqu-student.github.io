@@ -28,6 +28,8 @@ My research interests include neural machine translation and computer vision. I 
 
 ---
 
+<span class='anchor' id='publications'></span>
+
 # 📝 Publications
 
 <div class='paper-box'>
@@ -88,11 +90,15 @@ Ruixiang Wang, **Yuyang Hong**, Shiming Xiang, Chunhong Pan
 
 ---
 
+<span class='anchor' id='educations'></span>
+
 # 📖 Education
 - *2023.09 – 2028.06 (Expected)*, PhD Candidate, Institute of Automation, Chinese Academy of Sciences, Beijing. 
 - *2019.09 – 2023.06*, Bachelor, Data Science and Big Data Technology, Chongqing University, Chongqing. 
 
 ---
+
+<span class='anchor' id='internships'></span>
 
 # 💻 Internships
 - *2025.12 – Present*, [Alibaba Cloud](https://cn.aliyun.com/), Hangzhou, China.
