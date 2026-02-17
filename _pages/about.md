@@ -38,8 +38,8 @@ My research interest includes neural machine translation and computer vision. I 
 
 
 # 📖 Educations
-- *2019.06 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+- *2023.09 - 2028.06 (maybe)*, Phd Candidate, Institute of Automation, Chinese Academy of Sciences, Beijing. 
+- *2019.09 - 2023.06*, Bachelor, Data Science and Big Data Technology, Chongqing University, Chongqing. 
 
 
 # 💻 Internships
