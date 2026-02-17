@@ -19,7 +19,7 @@ redirect_from:
 
 My name is **Yuyang Hong** (洪宇洋).
 
-My research interests include neural machine translation and computer vision. I have published more than 10 papers at top international AI conferences, with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>Google Scholar citations <strong><span id='total_cit'>260K+</span></strong></a>.
+My research interests include neural machine translation and computer vision. I have published more than 10 papers at top international AI conferences
 
 ---
 
