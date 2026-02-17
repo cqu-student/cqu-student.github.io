@@ -228,3 +228,11 @@ custom_css: |
   .paper-box-text-only:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
+  
+  .paper-box-text-only .badge {
+    position: relative !important;
+    display: inline-block;
+    margin: 0 0 8px 0 !important;
+    top: 0;
+    left: 0;
+  }
