@@ -26,8 +26,8 @@ My research interests include neural machine translation and computer vision. I 
 # 📝 Publications
 
 <div class='paper-box'>
-<div class='paper-box-image'><div><div class="badge">Neurlps 2025</div>
-<img src='images/NeurIPS2025.png' alt="thumbnail" style="width:100%; height:180px; object-fit:cover; object-position:center; border-radius:6px; display:block;">
+<div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div>
+<img src='images/Neurlps2025.png' alt="thumbnail" style="width:100%; height:180px; object-fit:cover; object-position:center; border-radius:6px; display:block;">
 </div></div>
 <div class='paper-box-text' markdown="1">
 
