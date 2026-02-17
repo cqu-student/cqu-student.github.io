@@ -21,7 +21,8 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Yuyang Hong \n (洪宇洋)"
+  name             : "Yuyang Hong"
+  Chinese          : "洪宇洋"
   avatar           : "images/android-chrome-512x512.png"
   bio              : "PhD Student at CASIA"
   location         : "Beijing, China"
