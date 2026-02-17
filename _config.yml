@@ -162,3 +162,12 @@ compress_html:
   clippings: all
   ignore:
     envs: development
+
+custom_css: |
+  .paper-thumb {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 6px;
+  }
