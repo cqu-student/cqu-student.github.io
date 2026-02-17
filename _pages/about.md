@@ -19,14 +19,14 @@ redirect_from:
 
 My name is **Yuyang Hong** (洪宇洋).
 
-My research interests include neural machine translation and computer vision. I have published more than 10 papers at top international AI conferences, with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>Google Scholar citations <strong><span id='total_cit'>260K+</span></strong></a>.
+My research interests include neural machine translation and computer vision. I have published more than 10 papers at top international AI conferences
 
 ---
 
 # 📝 Publications
 
 <div class='paper-box'>
-<div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div>
+<div class='paper-box-image'><div><div class="badge">Neurlps 2025</div>
 <img src='images/NeurIPS2025.png' alt="thumbnail" style="width:100%; height:180px; object-fit:cover; object-position:center; border-radius:6px; display:block;">
 </div></div>
 <div class='paper-box-text' markdown="1">
