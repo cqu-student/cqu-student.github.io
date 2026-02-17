@@ -26,7 +26,7 @@ My research interests include neural machine translation and computer vision. I 
 # 📝 Publications
 
 <div class='paper-box'>
-<div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/NeurIPS2025.png' alt="thumbnail" class="paper-thumb" width="100%"></div></div>
+<div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div><img src='images/Neurlps2025.png' alt="thumbnail" class="paper-thumb" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 **Knowledge-based Visual Question Answering with Multimodal Processing, Retrieval and Filtering**  
