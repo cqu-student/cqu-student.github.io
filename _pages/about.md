@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-My name is **Yuyang Hong** (洪宇洋).
+My name is **Yuyang Hong** (洪宇洋),
 
 My research interests include neural machine translation and computer vision. I have published more than 10 papers at top international AI conferences
 
