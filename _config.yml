@@ -164,32 +164,22 @@ compress_html:
     envs: development
 
 custom_css: |
-  /* 横渠四句格言样式 */
+  /* 横渠四句书法样式 */
   .motto-banner {
     text-align: center;
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     margin: 1rem 0 2rem;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
-    border-left: 4px solid #667eea;
+    background: linear-gradient(135deg, #faf9f7 0%, #f0eee9 100%);
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
   }
   
-  .motto-text {
-    display: block;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: #2c3e50;
-    line-height: 1.8;
-    letter-spacing: 2px;
-    margin-bottom: 0.5rem;
-  }
-  
-  .motto-author {
-    display: block;
-    font-size: 0.9rem;
-    color: #7f8c8d;
-    font-style: italic;
+  .motto-calligraphy {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
   
   /* 论文图片统一高度 */
@@ -210,12 +200,12 @@ custom_css: |
     background: #fff;
   }
   
-  /* 论文 Badge 样式 - 蓝底 + 同行显示 */
+  /* 论文 Badge 样式 */
   .paper-badge {
     display: inline-block;
     padding: 4px 10px;
-    margin-right: 10px;      /* ✅ badge 和标题的间距 */
-    vertical-align: middle;   /* ✅ 和标题垂直居中对齐 */
+    margin-right: 10px;
+    vertical-align: middle;
     border-radius: 4px;
     font-size: 0.75rem;
     font-weight: 600;
@@ -224,21 +214,19 @@ custom_css: |
   }
   
   .paper-badge-blue {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  /* ✅ 统一蓝色渐变 */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   }
   
   /* 移动端适配 */
   @media (max-width: 768px) {
-    .motto-text {
-      font-size: 1rem;
-      letter-spacing: 1px;
+    .motto-banner {
+      padding: 0.5rem;
+      margin: 0.5rem 0 1.5rem;
+    }
+    .motto-calligraphy {
+      max-width: 95%;
     }
     .paper-thumb {
       height: 200px;
     }
-    .paper-badge {
-      margin-right: 8px;
-      font-size: 0.7rem;
-    }
-  }
   }
