@@ -14,10 +14,9 @@ redirect_from:
 {% assign gsDataBaseUrl = "https://raw.githubusercontent.com/" | append: site.repository | append: "/" %}
 {% endif %}
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
-<!-- ========== 横渠四句格言 ========== -->
 <!-- ========== 横渠四句书法 ========== -->
 <div class="motto-banner" markdown="1">
-  <img src="images/hengqu.jpg" alt="横渠四句" class="motto-calligraphy">
+  <img src="images/hengqu_siju.jpg" alt="横渠四句" class="motto-calligraphy">
 </div>
 
 <span class='anchor' id='about-me'></span>
