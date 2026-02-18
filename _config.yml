@@ -210,24 +210,21 @@ custom_css: |
     background: #fff;
   }
   
-  /* 论文 Badge 样式 - 修复遮挡问题 */
+  /* 论文 Badge 样式 - 蓝底 + 同行显示 */
   .paper-badge {
     display: inline-block;
-    padding: 4px 12px;
-    margin-bottom: 12px;  /* ✅ 关键：增加下方间距 */
+    padding: 4px 10px;
+    margin-right: 10px;      /* ✅ badge 和标题的间距 */
+    vertical-align: middle;   /* ✅ 和标题垂直居中对齐 */
     border-radius: 4px;
     font-size: 0.75rem;
     font-weight: 600;
     color: white;
-    line-height: 1;
+    line-height: 1.4;
   }
   
-  .paper-badge-arxiv {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  }
-  
-  .paper-badge-conf {
-    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  .paper-badge-blue {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);  /* ✅ 统一蓝色渐变 */
   }
   
   /* 移动端适配 */
@@ -239,4 +236,9 @@ custom_css: |
     .paper-thumb {
       height: 200px;
     }
+    .paper-badge {
+      margin-right: 8px;
+      font-size: 0.7rem;
+    }
+  }
   }
