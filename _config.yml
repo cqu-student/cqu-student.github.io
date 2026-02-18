@@ -166,44 +166,30 @@ compress_html:
 custom_css: |
   /* 横渠四句格言样式 */
   .motto-banner {
-  text-align: center;
-  padding: 2rem 1rem;
-  margin: 1rem 0 2rem;
-  background: #fffef9;  /* 米白色宣纸感 */
-  border: 2px solid #d4af37;  /* 金色边框 */
-  border-radius: 4px;
-  position: relative;
-}
-
-.motto-banner::before,
-.motto-banner::after {
-  content: "❝";
-  font-size: 2rem;
-  color: #d4af37;
-  opacity: 0.6;
-  position: absolute;
-}
-.motto-banner::before { top: 10px; left: 20px; }
-.motto-banner::after { 
-  content: "❞"; 
-  bottom: 10px; right: 20px; 
-  transform: rotate(180deg);
-}
-
-.motto-text {
-  font-family: "Kaiti", "STKaiti", "KaiTi", serif;  /* 楷体 */
-  font-size: 1.2rem;
-  color: #2c3e50;
-  line-height: 2;
-  letter-spacing: 4px;
-}
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin: 1rem 0 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+    border-left: 4px solid #667eea;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
   
-  /* 移动端适配 */
-  @media (max-width: 768px) {
-    .motto-text {
-      font-size: 1rem;
-      letter-spacing: 1px;
-    }
+  .motto-text {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2c3e50;
+    line-height: 1.8;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .motto-author {
+    display: block;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    font-style: italic;
   }
   
   /* 论文图片统一高度 */
@@ -215,16 +201,42 @@ custom_css: |
     border-radius: 6px;
   }
   
-  /* 无图论文样式 */
+  /* 无图论文容器 */
   .paper-box-text-only {
     margin: 1.5rem 0;
     padding: 1.2rem;
     border: 1px solid #e1e4e8;
     border-radius: 8px;
     background: #fff;
-    transition: box-shadow 0.3s ease;
   }
   
-  .paper-box-text-only:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  /* 论文 Badge 样式 - 修复遮挡问题 */
+  .paper-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    margin-bottom: 12px;  /* ✅ 关键：增加下方间距 */
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+    line-height: 1;
+  }
+  
+  .paper-badge-arxiv {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .paper-badge-conf {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  }
+  
+  /* 移动端适配 */
+  @media (max-width: 768px) {
+    .motto-text {
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
+    .paper-thumb {
+      height: 200px;
+    }
   }
