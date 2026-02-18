@@ -15,9 +15,9 @@ redirect_from:
 {% endif %}
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
 <!-- ========== 横渠四句格言 ========== -->
+<!-- ========== 横渠四句书法 ========== -->
 <div class="motto-banner" markdown="1">
-  <span class="motto-text">为天地立心，为生民立命，为往圣继绝学，为万世开太平</span>
-  <span class="motto-author">— 张载《横渠四句》</span>
+  <img src="images/hengqu.jpg" alt="横渠四句" class="motto-calligraphy">
 </div>
 
 <span class='anchor' id='about-me'></span>
