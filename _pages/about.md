@@ -29,7 +29,7 @@ redirect_from:
 </p>
 
 <p style="margin:0;">
-  💼 I am currently a Research Intern at <a href="https://cn.aliyun.com/" style="color:#667eea; text-decoration:none;">Alibaba Cloud (Feitian Lab)</a>, mentored by <strong>Lubin Fan</strong>, and collaborating with <strong>Jiaqi Gu</strong>, <strong>Yujin Lou</strong>, and <strong>Jinhui Guo</strong> 🤝. My research focuses on <strong>Vision-Language Models (VLM)</strong> 🖼️🗣️, <strong>Retrieval-Augmented Generation (RAG)</strong> 🔍, <strong>Continual Learning</strong> 🔄, and <strong>Audio-Visual Segmentation</strong> 🔊👁️. Feel free to reach out if you have ideas or opportunities — 📧 <a href="mailto:hongyuyang2023@ia.ac.cn" style="color:#667eea; text-decoration:none;">hongyuyang2023@ia.ac.cn</a> ✨
+  💼 I am currently a Research Intern at <a href="https://cn.aliyun.com/" style="color:#667eea; text-decoration:none;">Alibaba Cloud (Feitian Lab)</a>, mentored by <strong>Lubin Fan</strong>, and collaborating with <strong>Jiaqi Gu</strong>, <strong>Yujin Lou</strong>, and <strong>Jinhui Guo</strong> 🤝. My research focuses on <strong>Vision-Language Models (VLM)</strong> 🖼️🗣️, <strong>Retrieval-Augmented Generation (RAG)</strong> 🔍, <strong>Continual Learning</strong> 🔄, and <strong>Audio-Visual Segmentation</strong> 🔊👁️. Feel free to contact with me— 📧 <a href="mailto:hongyuyang2023@ia.ac.cn" style="color:#667eea; text-decoration:none;">hongyuyang2023@ia.ac.cn</a> ✨
 </p>
 
 </div>
