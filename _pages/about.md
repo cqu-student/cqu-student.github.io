@@ -15,8 +15,8 @@ redirect_from:
 {% endif %}
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
 <!-- ========== 横渠四句书法 ========== -->
-<div class="motto-banner" markdown="1">
-  <img src="images/hengqu.jpg" alt="横渠四句" class="motto-calligraphy">
+<div style="text-align:center; padding:0.5rem; margin:0.5rem auto 1.5rem; max-width:600px;">
+  <img src="images/hengqu_siju.jpg" alt="横渠四句" style="max-width:80%; height:auto; display:block; margin:0 auto;">
 </div>
 
 <span class='anchor' id='about-me'></span>
