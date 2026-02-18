@@ -70,7 +70,7 @@ My research interests include neural machine translation and computer vision. I 
 **IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting**  
 [📄 Paper](https://arxiv.org/abs/2512.09663)
 
-Tao Zhang, **Yuyang Hong**, Yang Xia, Kun Ding, Zeyu Zhang, Ying Wang, Shiming Xiang, Chunhong Pan
+Tao Zhang<sup>*</sup>, **Yuyang Hong**<sup>*</sup>, Yang Xia, Kun Ding, Zeyu Zhang, Ying Wang, Shiming Xiang, Chunhong Pan
 
 </div>
 
