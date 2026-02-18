@@ -65,7 +65,7 @@ My research interests include neural machine translation and computer vision. I 
 <!-- 无图论文 1: IF-Bench (共一标注) -->
 <div class='paper-box-text-only' markdown="1">
 
-<span class="paper-badge paper-badge-blue">arXiv 2025</span> **IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting**  
+<span style="display:inline-block; padding:4px 10px; margin-right:10px; vertical-align:middle; background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius:4px; font-size:0.75rem; font-weight:600; color:white;">arXiv 2025</span> **IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting**  
 [📄 Paper](https://arxiv.org/abs/2512.09663)
 
 Tao Zhang<sup>*</sup>, **Yuyang Hong**<sup>*</sup>, Yang Xia, Kun Ding, Zeyu Zhang, Ying Wang, Shiming Xiang, Chunhong Pan  
@@ -75,7 +75,7 @@ Tao Zhang<sup>*</sup>, **Yuyang Hong**<sup>*</sup>, Yang Xia, Kun Ding, Zeyu Zha
 <!-- 无图论文 2: ICASSP 2026 -->
 <div class='paper-box-text-only' markdown="1">
 
-<span class="paper-badge paper-badge-blue">ICASSP 2026</span> **Enhanced Graph Transformer with Serialized Graph Tokens**  
+<span style="display:inline-block; padding:4px 10px; margin-right:10px; vertical-align:middle; background:linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius:4px; font-size:0.75rem; font-weight:600; color:white;">ICASSP 2026</span> **Enhanced Graph Transformer with Serialized Graph Tokens**  
 [📄 Paper](https://arxiv.org/abs/2602.09065)
 
 Ruixiang Wang, **Yuyang Hong**, Shiming Xiang, Chunhong Pan
