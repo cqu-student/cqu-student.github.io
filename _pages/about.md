@@ -65,7 +65,7 @@ My research interests include neural machine translation and computer vision. I 
 <!-- 无图论文 1 -->
 <div class='paper-box-text-only' markdown="1">
 
-<div class="badge badge-arxiv" style="display:inline-block; margin-bottom:8px;">arXiv 2025</div>
+<span class="paper-badge paper-badge-arxiv">arXiv 2025</span>
 
 **IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting**  
 [📄 Paper](https://arxiv.org/abs/2512.09663)
@@ -77,7 +77,7 @@ Tao Zhang, **Yuyang Hong**, Yang Xia, Kun Ding, Zeyu Zhang, Ying Wang, Shiming X
 <!-- 无图论文 2 -->
 <div class='paper-box-text-only' markdown="1">
 
-<div class="badge badge-conf" style="display:inline-block; margin-bottom:8px; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">ICASSP 2026</div>
+<span class="paper-badge paper-badge-conf">ICASSP 2026</span>
 
 **Enhanced Graph Transformer with Serialized Graph Tokens**  
 [📄 Paper](https://arxiv.org/abs/2602.09065)
