@@ -19,11 +19,20 @@ redirect_from:
   <img src="images/hengqu.jpg" alt="横渠四句" style="max-width:80%; height:auto; display:block; margin:0 auto;">
 </div>
 
+<!-- ========== About Me ========== -->
 <span class='anchor' id='about-me'></span>
 
-My name is **Yuyang Hong** (洪宇洋).
+<div style="margin:1.5rem 0; padding:1.5rem; border:1px solid #e1e4e8; border-radius:8px; background:#fff; line-height:1.8; color:#34495e;">
 
-My research interests include neural machine translation and computer vision.
+<p style="margin:0 0 1rem;">
+  👋 Hi, I'm <strong>Yuyang Hong (洪宇洋)</strong>, a PhD candidate at <a href="http://www.casia.ac.cn/" style="color:#667eea; text-decoration:none;">Institute of Automation, Chinese Academy of Sciences (CASIA)</a> 🎓, expected to graduate in 2028. I completed my undergraduate studies at <a href="https://www.cqu.edu.cn/" style="color:#667eea; text-decoration:none;">Chongqing University</a>, where I was fortunate to be advised by <strong>Prof. Haibo Hu</strong> and <strong>Prof. Yongxin Ge</strong>. Currently, I am honored to work under the supervision of <strong>Prof. Shiming Xiang</strong> at CASIA, with valuable guidance from <strong>Qi Yang</strong> 🙏.
+</p>
+
+<p style="margin:0;">
+  💼 I am currently a Research Intern at <a href="https://cn.aliyun.com/" style="color:#667eea; text-decoration:none;">Alibaba Cloud (Feitian Lab)</a>, mentored by <strong>Lubin Fan</strong>, and collaborating with <strong>Jiaqi Gu</strong>, <strong>Yujin Lou</strong>, and <strong>Jinhui Guo</strong> 🤝. My research focuses on <strong>Vision-Language Models (VLM)</strong> 🖼️🗣️, <strong>Retrieval-Augmented Generation (RAG)</strong> 🔍, <strong>Continual Learning</strong> 🔄, and <strong>Audio-Visual Segmentation</strong> 🔊👁️. Feel free to reach out if you have ideas or opportunities — 📧 <a href="mailto:hongyuyang2023@ia.ac.cn" style="color:#667eea; text-decoration:none;">hongyuyang2023@ia.ac.cn</a> ✨
+</p>
+
+</div>
 
 ---
 
