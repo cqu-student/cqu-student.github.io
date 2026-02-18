@@ -69,7 +69,6 @@ My research interests include neural machine translation and computer vision. I 
 [📄 Paper](https://arxiv.org/abs/2512.09663)
 
 Tao Zhang<sup>*</sup>, **Yuyang Hong**<sup>*</sup>, Yang Xia, Kun Ding, Zeyu Zhang, Ying Wang, Shiming Xiang, Chunhong Pan  
-<sup>*</sup> Equal contribution
 
 </div>
 
