@@ -31,7 +31,7 @@ My research interests include neural machine translation and computer vision. I 
 
 <div class='paper-box'>
 <div class='paper-box-image'><div><div class="badge">NeurIPS 2025</div>
-<img src='images/Neurlps2025.png' alt="thumbnail" style="width:100%; height:180px; object-fit:cover; object-position:center; border-radius:6px; display:block;">
+<img src='images/NeurIPS2025.png' alt="thumbnail" style="width:100%; height:180px; object-fit:cover; object-position:center; border-radius:6px; display:block;">
 </div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -62,17 +62,18 @@ My research interests include neural machine translation and computer vision. I 
 </div>
 
 <!-- 无图论文 1: IF-Bench (共一标注) -->
-<div class='paper-box-text-only' markdown="1">
+<div style="margin:1.5rem 0; padding:1.2rem; border:1px solid #e1e4e8; border-radius:8px; background:#fff;">
 
 <span style="display:inline-block; padding:4px 10px; margin-right:10px; vertical-align:middle; background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius:4px; font-size:0.75rem; font-weight:600; color:white;">arXiv 2025</span> **IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting**  
 [📄 Paper](https://arxiv.org/abs/2512.09663)
 
 Tao Zhang<sup>*</sup>, **Yuyang Hong**<sup>*</sup>, Yang Xia, Kun Ding, Zeyu Zhang, Ying Wang, Shiming Xiang, Chunhong Pan  
+<sup>*</sup> Equal contribution
 
 </div>
 
 <!-- 无图论文 2: ICASSP 2026 -->
-<div class='paper-box-text-only' markdown="1">
+<div style="margin:1.5rem 0; padding:1.2rem; border:1px solid #e1e4e8; border-radius:8px; background:#fff;">
 
 <span style="display:inline-block; padding:4px 10px; margin-right:10px; vertical-align:middle; background:linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius:4px; font-size:0.75rem; font-weight:600; color:white;">ICASSP 2026</span> **Enhanced Graph Transformer with Serialized Graph Tokens**  
 [📄 Paper](https://arxiv.org/abs/2602.09065)
