@@ -62,6 +62,7 @@ redirect_from:
 
 **CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering**  
 [📄 Paper](https://arxiv.org/abs/2602.23952v1) | [💻 GitHub](https://github.com/cqu-student/CC-VQA)
+
 **Yuyang Hong**<sup>*</sup>, Jiaqi Gu<sup>*</sup>, Yujin Lou, Lubin Fan<sup>†</sup>,  Qi Yang, Ying Wang, Kun Ding, Yue Wu, Shiming Xiang, Jieping Ye
 
 <span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span>
