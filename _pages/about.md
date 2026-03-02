@@ -56,7 +56,7 @@ redirect_from:
 
 <div class='paper-box'>
 <div class='paper-box-image'><div><div class="badge">CVPR 2026</div>
-<img src='images/CVPR2025.jpg' alt="thumbnail" style="width:100%; height:180px; object-fit:cover; object-position:center; border-radius:6px; display:block;">
+<img src='images/CVPR2026.jpg' alt="thumbnail" style="width:100%; height:180px; object-fit:cover; object-position:center; border-radius:6px; display:block;">
 </div></div>
 <div class='paper-box-text' markdown="1">
 
