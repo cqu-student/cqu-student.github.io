@@ -111,4 +111,4 @@ redirect_from:
 ---
 
 # 💻 Internships
-- *2025.12 – Present*, [Alibaba Cloud](https://cn.aliyun.com/), Hangzhou, China.
+- *2025.12 – Present*, [Alibaba Cloud](https://cn.aliyun.com/), Hangzhou, China. Mentored by <a href="https://lubinfan.github.io/" style="color:#667eea; text-decoration:none;">Lubin Fan</a>
