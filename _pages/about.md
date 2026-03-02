@@ -1,4 +1,4 @@
----
+<img width="25" height="20" alt="image" src="https://github.com/user-attachments/assets/bc642534-9d5b-4476-a792-ff5bf2239aad" /><img width="1280" height="1156" alt="image" src="https://github.com/user-attachments/assets/8a818381-5da6-4736-bcb0-d1d99a116d9e" />---
 permalink: /
 title: ""
 excerpt: ""
@@ -90,7 +90,7 @@ redirect_from:
 <div style="margin:1.5rem 0; padding:1.2rem; border:1px solid #e1e4e8; border-radius:8px; background:#fff;">
   <span style="display:inline-block; padding:4px 10px; margin-right:10px; vertical-align:middle; background:linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius:4px; font-size:0.75rem; font-weight:600; color:white;">CVPR 2026</span> 
   <strong>IF-Bench: Benchmarking and Enhancing MLLMs for Infrared Images with Generative Visual Prompting</strong> <br><br>
-  <a href="https://arxiv.org/abs/2512.09663" style="margin-left:10px;">📄 Paper </a> <a href="https://arxiv.org/abs/2512.09663" style="margin-left:10px;">🤗 HuggingFace</a><br><br>
+  <a href="https://arxiv.org/abs/2512.09663" style="margin-left:10px;">📄 Paper </a> <a href="https://github.com/casiatao/IF-Bench" style="margin-left:10px;">💻 Github</a><br><br> <a href="https://arxiv.org/abs/2512.09663" style="margin-left:10px;">🤗 HuggingFace</a><br><br>
   Tao Zhang<sup>*</sup>, <strong>Yuyang Hong</strong><sup>*</sup>, Yang Xia, Kun Ding, Zeyu Zhang, Ying Wang, Shiming Xiang, Chunhong Pan<br>
 </div>
 
