@@ -72,7 +72,7 @@ redirect_from:
 
 <div class='paper-box'>
 <div class='paper-box-image'><div><div class="badge">arXiv 2025</div>
-<img src='images/arxiv2025.png' alt="thumbnail" style="width:100%; height:180px; object-fit:cover; object-position:center; border-radius:6px; display:block;">
+<img src='images/arxiv2026.png' alt="thumbnail" style="width:100%; height:180px; object-fit:cover; object-position:center; border-radius:6px; display:block;">
 </div></div>
 <div class='paper-box-text' markdown="1">
 
