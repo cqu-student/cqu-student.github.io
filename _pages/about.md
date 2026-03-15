@@ -96,7 +96,7 @@ redirect_from:
 
 <!-- 无图论文 2: ICASSP 2026 -->
 <div style="margin:1.5rem 0; padding:1.2rem; border:1px solid #e1e4e8; border-radius:8px; background:#fff;">
-  <span style="display:inline-block; padding:4px 10px; margin-right:10px; vertical-align:middle; background:linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius:4px; font-size:0.75rem; font-weight:600; color:white;">ICASSP 2026</span> 
+  <span style="display:inline-block; padding:4px 10px; margin-right:10px; vertical-align:middle; background:linear-gradient(135deg, #fa709a 0%, #fee140 100%); border-radius:4px; font-size:0.75rem; font-weight:600; color:white;">ICASSP 2026 (oral)</span> 
   <strong>Enhanced Graph Transformer with Serialized Graph Tokens</strong>
   <a href="https://arxiv.org/abs/2602.09065" style="margin-left:10px;">📄 Paper</a><br><br>
   Ruixiang Wang, <strong>Yuyang Hong</strong>, Shiming Xiang, Chunhong Pan
