@@ -29,7 +29,7 @@ redirect_from:
 </p>
 
 <p style="margin:0;">
-  💼 I am currently a Research Intern at <a href="https://cn.aliyun.com/" style="color:#667eea; text-decoration:none;">Alibaba Cloud (Tongyi Lab)</a>, mentored by <a href="https://lubinfan.github.io/" style="color:#667eea; text-decoration:none;">Lubin Fan</a>, and collaborating with <a href="https://gujiaqivadin.github.io/" style="color:#667eea; text-decoration:none;">Jiaqi Gu</a>, <strong>Yujin Lou</strong>, and <strong>Jinhui Guo</strong> 🤝. My research focuses on <strong>Vision-Language Models (VLM)</strong> 🖼️🗣️, <strong>Retrieval-Augmented Generation (RAG)</strong> 🔍, <strong>Continual Learning</strong> 🔄, and <strong>Audio-Visual Segmentation</strong> 🔊👁️. Thanks for anyone who helped me, and feel free to contact with me— 📧 <a href="mailto:hongyuyang2023@ia.ac.cn" style="color:#667eea; text-decoration:none;">hongyuyang2023@ia.ac.cn</a> ✨
+  💼 I am currently a Research Intern at <a href="https://cn.aliyun.com/" style="color:#667eea; text-decoration:none;">Alibaba Cloud (ATH-Tongyi)</a>, mentored by <a href="https://lubinfan.github.io/" style="color:#667eea; text-decoration:none;">Lubin Fan</a>, and collaborating with <a href="https://gujiaqivadin.github.io/" style="color:#667eea; text-decoration:none;">Jiaqi Gu</a>, <strong>Yujin Lou</strong>, and <strong>Jinhui Guo</strong> 🤝. My research focuses on <strong>Vision-Language Models (VLM)</strong> 🖼️🗣️, <strong>Retrieval-Augmented Generation (RAG)</strong> 🔍, <strong>Continual Learning</strong> 🔄, and <strong>Audio-Visual Segmentation</strong> 🔊👁️. Thanks for anyone who helped me, and feel free to contact with me— 📧 <a href="mailto:hongyuyang2023@ia.ac.cn" style="color:#667eea; text-decoration:none;">hongyuyang2023@ia.ac.cn</a> ✨
 </p>
 
 </div>
@@ -111,4 +111,4 @@ redirect_from:
 ---
 
 # 💻 Internships
-- *2025.12 – Present*, [Alibaba Cloud](https://cn.aliyun.com/), Hangzhou, China. Mentored by <a href="https://lubinfan.github.io/" style="color:#667eea; text-decoration:none;">Lubin Fan</a>
+- *2025.12 – Present*, ATH-Tongyi, [Alibaba Cloud](https://cn.aliyun.com/), Hangzhou, China. Mentored by <a href="https://lubinfan.github.io/" style="color:#667eea; text-decoration:none;">Lubin Fan</a>
